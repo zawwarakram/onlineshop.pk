@@ -6,7 +6,7 @@ import Link from "next/link"
 import { Star, Heart, Share2, ShoppingCart, Truck, RotateCcw, Shield, ChevronRight, Minus, Plus } from "lucide-react"
 
 export default function ProductDetail({ product, relatedProductsPromise, reviewsPromise }) {
-  const [mainImage, setMainImage] = useState(product.image)
+  const [mainImage, setMainImage] = useState(product?.image)
   const [quantity, setQuantity] = useState(1)
   const [expandedDescription, setExpandedDescription] = useState(false)
   const [activeTab, setActiveTab] = useState("description")
@@ -18,7 +18,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
 
   // Set main image when product changes
   useEffect(() => {
-    setMainImage(product.image)
+    setMainImage(product?.image)
   }, [product])
 
   // Calculate discount percentage
@@ -158,7 +158,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <Image src={mainImage || "/placeholder.svg"} alt={product.name} fill className="object-contain" />
+                  <Image src={mainImage || "/placeholder.svg"} alt={product?.name} fill className="object-contain" />
 
                   {discount && (
                     <div className="absolute top-4 left-4">
@@ -483,11 +483,11 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
               className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
               <div className="relative h-40 overflow-hidden">
-                <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className="object-cover" />
+                <Image src={product?.image || "/placeholder.svg"} alt={product?.name} fill className="object-cover" />
               </div>
               <div className="p-3">
-                <h3 className="text-sm font-medium text-gray-900 truncate">{product.name}</h3>
-                <p className="text-sm font-bold text-gray-900">Rs. {product.price.toFixed(0)}</p>
+                <h3 className="text-sm font-medium text-gray-900 truncate">{product?.name}</h3>
+                <p className="text-sm font-bold text-gray-900">Rs. {product?.price.toFixed(0)}</p>
               </div>
             </div>
           ))}
@@ -665,15 +665,15 @@ function RelatedProducts({ relatedProductsPromise }) {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
       {relatedProducts?.map((product) => (
         <div
-          key={product.id}
+          key={product?.id}
           className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
         >
           {/* Product Image */}
           <div className="relative h-48 overflow-hidden">
             <Link href={`/product/${product.id}`}>
               <Image
-                src={product.image || "/placeholder.svg"}
-                alt={product.name}
+                src={product?.image || "/placeholder.svg"}
+                alt={product?.name}
                 fill
                 className="object-cover transition-all duration-700 group-hover:scale-110"
               />

@@ -247,7 +247,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                       />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-600">{product.rating} (Reviews)</span>
+                  <span className="text-sm text-gray-600">{product?.rating} (Reviews)</span>
                 </div>
               </div>
 
@@ -533,13 +533,13 @@ function ReviewsTab({ reviews = [], reviewsPromise, productRating }) {
                   />
                 ))}
               </div>
-              <div className="text-sm text-gray-500">Based on {allReviews.length} reviews</div>
+              <div className="text-sm text-gray-500">Based on {allReviews?.length} reviews</div>
             </div>
           </div>
 
           <div className="space-y-2 mt-4">
             {[5, 4, 3, 2, 1].map((star) => {
-              const count = allReviews?.filter((review) => review.rating === star)?.length
+              const count = allReviews?.filter((review) => review?.rating === star)?.length
               const percentage = allReviews?.length > 0 ? (count / allReviews?.length) * 100 : 0
 
               return (

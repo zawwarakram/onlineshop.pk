@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect } from 'react'
-import { useAuth, useUser } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
 import Home from "@/app/components/Home/page";
 // import ThemeToggle from "@/app/components/ThemeToggle";
 const page = () => {

@@ -102,9 +102,9 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
       label: "Description",
       content: (
         <div className="space-y-4">
-          <p>{product.description}</p>
+          <p>{product?.description}</p>
 
-          {product.features && product.features.length > 0 && (
+          {product?.features && product?.features?.length > 0 && (
             <div>
               <h3 className="font-medium mb-2">Features</h3>
               <ul className="list-disc pl-5 space-y-1">
@@ -272,7 +272,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
               {/* Short Description */}
               <div className="mb-6">
                 <p className="text-gray-600">
-                  {expandedDescription ? product.description : `${product?.description?.substring(0, 200)}...`}
+                  {expandedDescription ? product?.description : `${product?.description?.substring(0, 200)}...`}
                 </p>
                 <button
                   onClick={() => setExpandedDescription(!expandedDescription)}
@@ -411,8 +411,8 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
             {activeTab === "description" && (
               <div className="prose max-w-none">
                 <h2 className="text-xl font-bold mb-4">Product Description</h2>
-                <p className="mb-4">{product.description}</p>
-                <h3 className="text-lg font-semibold mb-3">About {product.brand}</h3>
+                <p className="mb-4">{product?.description}</p>
+                <h3 className="text-lg font-semibold mb-3">About {product?.brand}</h3>
                 <p>
                   {product.brand} is known for its high-quality products that blend traditional craftsmanship with
                   modern design. Each product is carefully crafted using the finest materials to ensure a premium

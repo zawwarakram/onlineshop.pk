@@ -37,7 +37,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
   }
 
   const increaseQuantity = () => {
-    if (quantity < product.stock) {
+    if (quantity < product?.stock) {
       setQuantity(quantity + 1)
     }
   }
@@ -322,7 +322,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                   >
                     <Plus className="h-4 w-4" />
                   </button>
-                  <span className="ml-3 text-sm text-gray-500">{product.stock} items available</span>
+                  <span className="ml-3 text-sm text-gray-500">{product?.stock} items available</span>
                 </div>
               </div>
 

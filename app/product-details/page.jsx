@@ -414,7 +414,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                 <p className="mb-4">{product?.description}</p>
                 <h3 className="text-lg font-semibold mb-3">About {product?.brand}</h3>
                 <p>
-                  {product.brand} is known for its high-quality products that blend traditional craftsmanship with
+                  {product?.brand} is known for its high-quality products that blend traditional craftsmanship with
                   modern design. Each product is carefully crafted using the finest materials to ensure a premium
                   experience.
                 </p>

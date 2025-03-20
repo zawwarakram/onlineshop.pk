@@ -27,7 +27,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
     return Math.round(((originalPrice - price) / originalPrice) * 100)
   }
 
-  const discount = calculateDiscount(product.originalPrice, product.price)
+  const discount = calculateDiscount(product?.originalPrice, product?.price)
 
   // Handle quantity change
   const decreaseQuantity = () => {
@@ -225,15 +225,15 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
               <div className="mb-4">
                 <div className="flex items-center mb-2">
                   <span className="text-xs font-normal border border-gray-300 rounded-full px-2 py-1 text-gray-700">
-                    {product.brand}
+                    {product?.brand}
                   </span>
                   <span className="mx-2 text-gray-300">|</span>
                   <span className="text-sm text-green-600 font-medium flex items-center">
                     <span className="inline-block w-2 h-2 bg-green-600 rounded-full mr-1"></span>
-                    In Stock ({product.stock} available)
+                    In Stock ({product?.stock} available)
                   </span>
                 </div>
-                <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{product.name}</h1>
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{product?.name}</h1>
 
                 {/* Ratings */}
                 <div className="flex items-center mb-4">
@@ -242,7 +242,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                       <Star
                         key={i}
                         className={`h-5 w-5 ${
-                          i < Math.floor(product.rating) ? "fill-current" : "stroke-current fill-none"
+                          i < Math.floor(product?.rating) ? "fill-current" : "stroke-current fill-none"
                         }`}
                       />
                     ))}
@@ -254,14 +254,14 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
               {/* Price */}
               <div className="mb-6">
                 <div className="flex items-center">
-                  <span className="text-3xl font-bold text-gray-900">Rs. {product.price.toFixed(0)}</span>
-                  {product.originalPrice && (
+                  <span className="text-3xl font-bold text-gray-900">Rs. {product?.price?.toFixed(0)}</span>
+                  {product?.originalPrice && (
                     <>
                       <span className="text-lg text-gray-500 line-through ml-3">
-                        Rs. {product.originalPrice.toFixed(0)}
+                        Rs. {product?.originalPrice.toFixed(0)}
                       </span>
                       <span className="ml-2 text-rose-600 font-medium">
-                        Save Rs. {(product.originalPrice - product.price).toFixed(0)}
+                        Save Rs. {(product?.originalPrice - product?.price)?.toFixed(0)}
                       </span>
                     </>
                   )}
@@ -680,10 +680,10 @@ function RelatedProducts({ relatedProductsPromise }) {
             </Link>
 
             {/* Discount Badge */}
-            {product.originalPrice && (
+            {product?.originalPrice && (
               <div className="absolute top-3 left-3">
                 <span className="bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded-md">
-                  {calculateDiscount(product.originalPrice, product.price)}% OFF
+                  {calculateDiscount(product?.originalPrice, product?.price)}% OFF
                 </span>
               </div>
             )}
@@ -702,19 +702,19 @@ function RelatedProducts({ relatedProductsPromise }) {
                   <Star
                     key={i}
                     className={`h-3 w-3 ${
-                      i < Math.floor(product.rating) ? "fill-current" : "stroke-current fill-none"
+                      i < Math.floor(product?.rating) ? "fill-current" : "stroke-current fill-none"
                     }`}
                   />
                 ))}
               </div>
-              <span className="text-xs text-gray-500 ml-1">({product.rating})</span>
+              <span className="text-xs text-gray-500 ml-1">({product?.rating})</span>
             </div>
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-sm font-bold text-gray-900">Rs. {product.price.toFixed(0)}</span>
-                {product.originalPrice && (
+                <span className="text-sm font-bold text-gray-900">Rs. {product?.price?.toFixed(0)}</span>
+                {product?.originalPrice && (
                   <span className="text-xs text-gray-500 line-through ml-2">
-                    Rs. {product.originalPrice.toFixed(0)}
+                    Rs. {product?.originalPrice?.toFixed(0)}
                   </span>
                 )}
               </div>

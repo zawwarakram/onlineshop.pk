@@ -135,10 +135,10 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
             </Link>
             <ChevronRight className="h-4 w-4 mx-2" />
             <Link href="/Products" className="hover:text-rose-600 transition-colors">
-              {product.category}
+              {product?.category}
             </Link>
             <ChevronRight className="h-4 w-4 mx-2" />
-            <span className="text-gray-900 font-medium truncate break-words">{product.name}</span>
+            <span className="text-gray-900 font-medium truncate break-words">{product?.name}</span>
           </div>
         </div>
       </div>
@@ -432,8 +432,8 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                       <tbody>
                         {product?.specifications?.map((spec, index) => (
                           <tr key={index} className={index % 2 === 0 ? "bg-gray-100" : ""}>
-                            <td className="py-2 px-3 text-sm font-medium text-gray-700">{spec.name}</td>
-                            <td className="py-2 px-3 text-sm text-gray-600">{spec.value}</td>
+                            <td className="py-2 px-3 text-sm font-medium text-gray-700">{spec?.name}</td>
+                            <td className="py-2 px-3 text-sm text-gray-600">{spec?.value}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -445,11 +445,11 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                       <tbody>
                         <tr className="bg-gray-100">
                           <td className="py-2 px-3 text-sm font-medium text-gray-700">SKU</td>
-                          <td className="py-2 px-3 text-sm text-gray-600">{product.sku}</td>
+                          <td className="py-2 px-3 text-sm text-gray-600">{product?.sku}</td>
                         </tr>
                         <tr>
                           <td className="py-2 px-3 text-sm font-medium text-gray-700">Category</td>
-                          <td className="py-2 px-3 text-sm text-gray-600">{product.category}</td>
+                          <td className="py-2 px-3 text-sm text-gray-600">{product?.category}</td>
                         </tr>
                         <tr className="bg-gray-100">
                           <td className="py-2 px-3 text-sm font-medium text-gray-700">Tags</td>
@@ -479,7 +479,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {relatedProducts?.slice(0, 4)?.map((product) => (
             <div
-              key={`recent-${product.id}`}
+              key={`recent-${product?.id}`}
               className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
               <div className="relative h-40 overflow-hidden">
@@ -523,10 +523,10 @@ function ReviewsTab({ reviews = [], reviewsPromise, productRating }) {
         <h2 className="text-xl font-bold mb-4">Customer Reviews</h2>
         <div className="bg-gray-50 rounded-lg p-4 mb-6">
           <div className="flex items-center mb-2">
-            <div className="text-4xl font-bold text-gray-900 mr-3">{productRating.toFixed(1)}</div>
+            <div className="text-4xl font-bold text-gray-900 mr-3">{productRating?.toFixed(1)}</div>
             <div>
               <div className="flex text-amber-400 mb-1">
-                {[...Array(5)].map((_, i) => (
+                {[...Array(5)]?.map((_, i) => (
                   <Star
                     key={i}
                     className={`h-5 w-5 ${i < Math.floor(productRating) ? "fill-current" : "stroke-current fill-none"}`}
@@ -539,8 +539,8 @@ function ReviewsTab({ reviews = [], reviewsPromise, productRating }) {
 
           <div className="space-y-2 mt-4">
             {[5, 4, 3, 2, 1].map((star) => {
-              const count = allReviews.filter((review) => review.rating === star).length
-              const percentage = allReviews.length > 0 ? (count / allReviews.length) * 100 : 0
+              const count = allReviews?.filter((review) => review.rating === star)?.length
+              const percentage = allReviews?.length > 0 ? (count / allReviews?.length) * 100 : 0
 
               return (
                 <div key={star} className="flex items-center">
@@ -567,7 +567,7 @@ function ReviewsTab({ reviews = [], reviewsPromise, productRating }) {
         {allReviews?.length > 0 ? (
           <div className="space-y-6">
             {allReviews?.map((review) => (
-              <div key={review.id} className="border-b border-gray-200 pb-6 last:border-0">
+              <div key={review?.id} className="border-b border-gray-200 pb-6 last:border-0">
                 <div className="flex items-start mb-3">
                   {/* <div className="relative w-10 h-10 rounded-full overflow-hidden mr-3">
                 
@@ -670,7 +670,7 @@ function RelatedProducts({ relatedProductsPromise }) {
         >
           {/* Product Image */}
           <div className="relative h-48 overflow-hidden">
-            <Link href={`/product/${product.id}`}>
+            <Link href={`/product/${product?.id}`}>
               <Image
                 src={product?.image || "/placeholder.svg"}
                 alt={product?.name}
@@ -691,9 +691,9 @@ function RelatedProducts({ relatedProductsPromise }) {
 
           {/* Product Info */}
           <div className="p-4">
-            <Link href={`/product/${product.id}`} className="block">
+            <Link href={`/product/${product?.id}`} className="block">
               <h3 className="text-sm font-medium text-gray-900 mb-1 hover:text-rose-600 transition-colors line-clamp-2">
-                {product.name}
+                {product?.name}
               </h3>
             </Link>
             <div className="flex items-center mb-2">

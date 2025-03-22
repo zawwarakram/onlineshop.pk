@@ -353,7 +353,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                   className="flex-1 bg-rose-600 hover:bg-rose-700 text-white py-3 px-4 rounded-md font-medium flex items-center justify-center transition-colors"
                 >
                   <ShoppingCart className="h-5 w-5 mr-2" />
-                  Chat with Dealer
+                  Chat with Seller
                 </button>
                 <button
                   onClick={redirectToWhatsApp}

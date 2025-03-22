@@ -61,6 +61,26 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
     setIsZoomed(false)
   }
 
+  // Function to redirect to WhatsApp with product details
+  const redirectToWhatsApp = () => {
+    // Add Pakistan country code (+92) and remove the first zero
+    const phoneNumber = "923002401984" // +92 followed by number without the first 0
+    const productName = product?.name || "Product"
+    const productPrice = product?.price ? `Rs. ${product.price.toFixed(0)}` : "Price not available"
+
+    // Create message with product details
+    const message = `Hello! I would like to order:\n\n*${productName}*\nPrice: ${productPrice}\nQuantity: ${quantity}\n\nPlease provide payment details.`
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message)
+
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+
+    // Redirect to WhatsApp
+    window.open(whatsappURL, "_blank")
+  }
+
   const relatedProducts = [
     {
       id: 13,
@@ -218,8 +238,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                 </div>
               </div>
             </div>
-{/* nmn,mn,mn,m */}
-{/* hjgjhgasjhgas */}
+
             {/* Product Info - Right Column */}
             <div className="lg:col-span-7">
               {/* Brand and Title */}
@@ -327,14 +346,20 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                 </div>
               </div>
 
-              {/* Add to Cart and Buy Now Buttons */}
+              {/* Add to Cart and Buy Now Buttons - MODIFIED FOR WHATSAPP REDIRECT */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <button className="flex-1 bg-rose-600 hover:bg-rose-700 text-white py-3 px-4 rounded-md font-medium flex items-center justify-center transition-colors">
+                <button
+                  onClick={redirectToWhatsApp}
+                  className="flex-1 bg-rose-600 hover:bg-rose-700 text-white py-3 px-4 rounded-md font-medium flex items-center justify-center transition-colors"
+                >
                   <ShoppingCart className="h-5 w-5 mr-2" />
-                  Add to Cart
+                  Chat with Dealer
                 </button>
-                <button className="flex-1 bg-gray-900 hover:bg-gray-800 text-white py-3 px-4 rounded-md font-medium transition-colors">
-                  Buy Now
+                <button
+                  onClick={redirectToWhatsApp}
+                  className="flex-1 bg-gray-900 hover:bg-gray-800 text-white py-3 px-4 rounded-md font-medium transition-colors"
+                >
+                  Order Now
                 </button>
               </div>
 
@@ -570,9 +595,6 @@ function ReviewsTab({ reviews = [], reviewsPromise, productRating }) {
             {allReviews?.map((review) => (
               <div key={review?.id} className="border-b border-gray-200 pb-6 last:border-0">
                 <div className="flex items-start mb-3">
-                  {/* <div className="relative w-10 h-10 rounded-full overflow-hidden mr-3">
-                
-                  </div> */}
                   <div>
                     <h4 className="font-medium text-gray-900">{review?.user}</h4>
                     <div className="flex items-center">

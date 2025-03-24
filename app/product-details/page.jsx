@@ -64,7 +64,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
   // Function to redirect to WhatsApp with product details
   const redirectToWhatsApp = () => {
     // Add Pakistan country code (+92) and remove the first zero
-    const phoneNumber = "923292025738" // +92 followed by number without the first 0
+    const phoneNumber = "923292045738" // +92 followed by number without the first 0
     const productName = product?.name || "Product"
     const productPrice = product?.price ? `Rs. ${product.price.toFixed(0)}` : "Price not available"
 

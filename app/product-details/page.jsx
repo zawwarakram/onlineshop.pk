@@ -64,7 +64,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
   // Function to redirect to WhatsApp with product details
   const redirectToWhatsApp = () => {
     // Add Pakistan country code (+92) and remove the first zero
-    const phoneNumber = "923002401984" // +92 followed by number without the first 0
+    const phoneNumber = "923292025738" // +92 followed by number without the first 0
     const productName = product?.name || "Product"
     const productPrice = product?.price ? `Rs. ${product.price.toFixed(0)}` : "Price not available"
 
@@ -369,14 +369,14 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                   <Truck className="h-5 w-5 text-gray-500 mr-3 mt-0.5" />
                   <div>
                     <h4 className="font-medium text-gray-900">Free Delivery</h4>
-                    <p className="text-sm text-gray-600">Free delivery on orders over Rs. 1000</p>
+                    <p className="text-sm text-gray-600">Free delivery on orders over Rs. 899</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <RotateCcw className="h-5 w-5 text-gray-500 mr-3 mt-0.5" />
                   <div>
                     <h4 className="font-medium text-gray-900">Easy Returns</h4>
-                    <p className="text-sm text-gray-600">15 days easy return policy</p>
+                    <p className="text-sm text-gray-600">7 days easy return policy</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -494,25 +494,38 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
       </div>
 
       {/* Related Products */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-6 py-8">
         <h2 className="text-2xl font-bold mb-6">Related Products</h2>
         <RelatedProducts relatedProductsPromise={relatedProductsPromise} />
       </div>
 
       {/* Recently Viewed */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-6 py-8">
         <h2 className="text-2xl font-bold mb-6">Recently Viewed</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {relatedProducts?.slice(0, 4)?.map((product) => (
             <div
               key={`recent-${product?.id}`}
               className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
-              <div className="relative h-40 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
                 <Image src={product?.image || "/placeholder.svg"} alt={product?.name} fill className="object-cover" />
               </div>
               <div className="p-3">
                 <h3 className="text-sm font-medium text-gray-900 truncate">{product?.name}</h3>
+                <div className="flex items-center mb-2">
+              <div className="flex text-amber-400">
+                {[...Array(5)]?.map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`h-3 w-3 ${
+                      i < Math.floor(product?.rating) ? "fill-current" : "stroke-current fill-none"
+                    }`}
+                  />
+                ))}
+              </div>
+              <span className="text-xs text-gray-500 ml-1">({product?.rating})</span>
+            </div>
                 <p className="text-sm font-bold text-gray-900">Rs. {product?.price.toFixed(0)}</p>
               </div>
             </div>
@@ -685,20 +698,20 @@ function RelatedProducts({ relatedProductsPromise }) {
   }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
       {relatedProducts?.map((product) => (
         <div
           key={product?.id}
           className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
         >
           {/* Product Image */}
-          <div className="relative h-48 overflow-hidden">
+          <div className="relative h-50 overflow-hidden">
             <Link href={`/product/${product?.id}`}>
               <Image
                 src={product?.image || "/placeholder.svg"}
                 alt={product?.name}
                 fill
-                className="object-cover transition-all duration-700 group-hover:scale-110"
+                className="object-fill transition-all duration-700 group-hover:scale-110"
               />
             </Link>
 

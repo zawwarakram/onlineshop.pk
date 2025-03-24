@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TrendingProducts() {
   const [hoveredProduct, setHoveredProduct] = useState(null);
@@ -313,7 +314,8 @@ export default function TrendingProducts() {
               Discover our most popular products that everyone's talking about.
             </p>
           </div>
-          <button className="hidden md:flex items-center text-gray-900 font-medium hover:text-rose-600 transition-colors">
+          <Link href={"/Products"}>
+          <button className="hidden cursor-pointer md:flex items-center text-gray-900 font-medium hover:text-rose-600 transition-colors">
             View All
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -329,10 +331,12 @@ export default function TrendingProducts() {
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
+            <a href={`/product/${product.id}`}>
             <div
               key={product.id}
               className="group cursor-pointer bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
@@ -451,11 +455,13 @@ export default function TrendingProducts() {
                 </div>
               </div>
             </div>
+            </a>
           ))}
         </div>
 
         <div className="mt-8 text-center md:hidden">
-          <button className="inline-flex items-center text-gray-900 font-medium hover:text-rose-600 transition-colors">
+          <Link href={"/Products"}>
+          <button className="inline-flex cursor-pointer items-center text-gray-900 font-medium hover:text-rose-600 transition-colors">
             View All Products
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -471,6 +477,7 @@ export default function TrendingProducts() {
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </button>
+          </Link>
         </div>
       </div>
     </section>

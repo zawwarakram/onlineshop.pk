@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Star, Heart, Share2, ShoppingCart, Truck, RotateCcw, Shield, ChevronRight, Minus, Plus } from "lucide-react"
+import { Star, Heart, Share2, ShoppingCart, Truck, RotateCcw, Shield, ChevronRight, Minus, Plus } from 'lucide-react'
 
 export default function ProductDetail({ product, relatedProductsPromise, reviewsPromise }) {
   const [mainImage, setMainImage] = useState(product?.image)
@@ -64,22 +64,25 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
   // Function to redirect to WhatsApp with product details
   const redirectToWhatsApp = () => {
     // Add Pakistan country code (+92) and remove the first zero
-    const phoneNumber = "923292045738" // +92 followed by number without the first 0
-    const productName = product?.name || "Product"
-    const productPrice = product?.price ? `Rs. ${product.price.toFixed(0)}` : "Price not available"
-
-    // Create message with product details
-    const message = `Hello! I would like to order:\n\n*${productName}*\nPrice: ${productPrice}\nQuantity: ${quantity}\n\nPlease provide payment details.`
-
+    const phoneNumber = "923292045738"; // +92 followed by number without the first 0
+    const productName = product?.name || "Product";
+    const productPrice = product?.price ? `Rs. ${product.price.toFixed(0)}` : "Price not available";
+    const userId = product?.id || "Unknown User"; // Ensure user ID is available
+    const quantityText = quantity ? `Quantity: ${quantity}\n` : ""; // Only add quantity if available
+  
+    // Create message with product details and user ID
+    const message = `Hello! I would like to order:\n\n*${productName}*\nPrice: ${productPrice}\n${quantityText}\nUser ID: ${userId}\n\nPlease provide payment details.`;
+  
     // Encode the message for URL
-    const encodedMessage = encodeURIComponent(message)
-
+    const encodedMessage = encodeURIComponent(message);
+  
     // Create WhatsApp URL
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
-
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  
     // Redirect to WhatsApp
-    window.open(whatsappURL, "_blank")
-  }
+    window.open(whatsappURL, "_blank");
+  };
+  
 
   const relatedProducts = [
     {
@@ -761,4 +764,3 @@ function RelatedProducts({ relatedProductsPromise }) {
     </div>
   )
 }
-

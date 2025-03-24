@@ -9,6 +9,24 @@ export default function Footer() {
           behavior: "smooth",
         })
       }
+      const openWhatsApp = () => {
+        const phoneNumber = "923292045738"; // +92 followed by number without the first 0
+       
+        // Create message with product details and user ID
+        const message = `Asalam o ALiakum! Umeed hai aap khairiyat se honge. Mujhe aapki madad ki zaroorat hai, kya aap meri rahnumai kar sakte hain?`;
+      
+        // Encode the message for URL
+        const encodedMessage = encodeURIComponent(message);
+      
+        // Create WhatsApp URL
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      
+        // Redirect to WhatsApp
+        window.open(whatsappURL, "_blank");
+    };
+    
+    
+
     const images = ["https://img.lazcdn.com/us/domino/56915ba8-b2c0-4caf-b3a1-7e0f3d2d45cf_PK-139-84.png","https://img.lazcdn.com/us/domino/dd8e0447-8052-44f3-8ab2-b24c56a2491f_PK-139-84.png","https://img.lazcdn.com/us/domino/5ba8a652-1445-45cb-a2a5-ed6043004243_PK-63-48.png"]
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -349,6 +367,15 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <button 
+                onClick={openWhatsApp} 
+                className="fixed bottom-25 right-8 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 .5C5.648.5.5 5.648.5 12c0 2.13.558 4.149 1.618 5.933L.5 23.5l5.72-1.545A11.47 11.47 0 0 0 12 23.5c6.352 0 11.5-5.148 11.5-11.5S18.352.5 12 .5zm0 21A9.484 9.484 0 0 1 5.6 19.5l-.348-.203-3.372.911.91-3.365-.22-.35A9.468 9.468 0 0 1 2.5 12C2.5 6.752 6.752 2.5 12 2.5S21.5 6.752 21.5 12 17.248 21.5 12 21.5zm5.06-7.58c-.252-.126-1.496-.738-1.728-.82-.232-.084-.4-.126-.568.126-.168.252-.648.82-.792.984-.144.168-.288.188-.54.063-.252-.126-1.062-.392-2.02-1.253a7.63 7.63 0 0 1-1.41-1.722c-.148-.252-.015-.39.11-.515.112-.112.252-.294.38-.442a1.87 1.87 0 0 0 .252-.421c.084-.168.042-.315-.021-.442-.063-.126-.568-1.368-.777-1.872-.204-.49-.41-.422-.568-.43h-.49c-.168 0-.442.063-.674.315-.231.252-.884.864-.884 2.104s.905 2.442 1.032 2.614c.126.168 1.788 2.731 4.34 3.67.606.26 1.08.415 1.45.531.61.195 1.164.167 1.604.1.49-.073 1.496-.61 1.705-1.197.21-.586.21-1.088.148-1.197-.063-.112-.231-.18-.483-.304z"/>
+                </svg>
+            </button>
+
       <button
         onClick={scrollToTop}
         className="fixed bottom-8 right-8 w-12 cursor-pointer h-12 rounded-full bg-rose-600 text-white shadow-lg flex items-center justify-center hover:bg-rose-700 transition-colors focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 z-50"

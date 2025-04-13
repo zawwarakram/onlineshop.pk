@@ -2,6 +2,12 @@ import { Suspense } from "react"
 import { notFound } from "next/navigation"
 import ProductDetail from "../../product-details/page"
 import ProductDetailSkeleton from "../../components/product-detail-skeleton"
+import bag1 from '../../assets/bag1.png'
+import bag2 from '../../assets/bag2.png'
+import bag3 from '../../assets/bag3.png'
+import bag4 from '../../assets/bag4.png'
+import bottle1 from '../../assets/bottle1.png'
+import bottle2 from '../../assets/bottle2.png'
 // import  { Product, Review } from "@/types"
 
 // This is a sample function to fetch product data
@@ -310,18 +316,25 @@ async function getProductById(id) {
     },
     {
       id: 6,
-      name: "Water Bottles, Glass/Plastic 400 ML Water bottles",
-      price: 599,
-      originalPrice: 850,
+      name: "Glass Water Bottle for Girls & Boys - Glass Leakproof Design for Ultimate Freshness - Perfect for School, Gym, and Office Durable Glass/Plastic Hybrid - Stay Hydrated in Style with Fancy Bottles for Water for Girls School",
+      price: 699,
+      originalPrice: 899,
       rating: 4.6,
       image: "https://img.drz.lazcdn.com/static/pk/p/12fb392c98ac9dd27d7117520f9728ad.jpg_720x720q80.jpg_.webp",
       hoverImage: "https://img.drz.lazcdn.com/static/pk/p/c0b003fab3f92db611935fce72b01ed2.jpg_720x720q80.jpg_.webp",
       description:
         "Product details of Water Bottles, Glass/Plastic 400 ML Water bottles, Sports water bottles Double walled",
-      images: [
-        "https://img.drz.lazcdn.com/static/pk/p/12fb392c98ac9dd27d7117520f9728ad.jpg_720x720q80.jpg_.webp",
-        "https://img.drz.lazcdn.com/static/pk/p/c0b003fab3f92db611935fce72b01ed2.jpg_720x720q80.jpg_.webp",
-      ],
+        images: [
+          "https://img.drz.lazcdn.com/static/pk/p/2f0fab5cf2baabc839fcd4586ca46dd0.jpg_720x720q80.jpg_.webp",
+          bottle1,
+          bottle2,
+          "https://img.drz.lazcdn.com/static/pk/p/dc0419b1be81241041dfd837f4c00927.jpg_720x720q80.jpg_.webp",
+          "https://img.drz.lazcdn.com/static/pk/p/70fb98623146dfbde8fb4cf3bb90617a.jpg_720x720q80.jpg_.webp",
+          "https://img.drz.lazcdn.com/static/pk/p/72b18b330e2f94f11f0c44f0aec5f667.jpg_720x720q80.jpg_.webp",
+          "https://img.drz.lazcdn.com/static/pk/p/f16ecac7ed079a5893b24ba06fb425c1.jpg_720x720q80.jpg_.webp",
+          "https://img.drz.lazcdn.com/static/pk/p/025e6b91247cc4859475c23f55f7b319.jpg_720x720q80.jpg_.webp",
+          "https://img.drz.lazcdn.com/static/pk/p/f5084d4671793decf71994abcccfc59e.jpg_720x720q80.jpg_.webp",
+        ],
       stock: 50,
       sku: "BOTTLE-400ML",
       brand: "EcoBottle",
@@ -382,7 +395,7 @@ async function getProductById(id) {
     },
     {
       id: 7,
-      name: "Stylish 400ml Glass Water Bottle for Girls & Boys",
+      name: "Glass Water Bottle for Girls & Boys - Glass Leakproof Design for Ultimate Freshness - Perfect for School, Gym, and Office Durable Glass/Plastic Hybrid - Stay Hydrated in Style with Fancy Bottles for Water for Girls School",
       price: 499,
       originalPrice: 650,
       rating: 4.9,
@@ -391,6 +404,13 @@ async function getProductById(id) {
       description: "Product details of Stylish 400ml Glass Water Bottle for Girls & Boys - Insulated Leakproof Design",
       images: [
         "https://img.drz.lazcdn.com/static/pk/p/2f0fab5cf2baabc839fcd4586ca46dd0.jpg_720x720q80.jpg_.webp",
+        bottle1,
+        bottle2,
+        "https://img.drz.lazcdn.com/static/pk/p/dc0419b1be81241041dfd837f4c00927.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/70fb98623146dfbde8fb4cf3bb90617a.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/72b18b330e2f94f11f0c44f0aec5f667.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/f16ecac7ed079a5893b24ba06fb425c1.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/025e6b91247cc4859475c23f55f7b319.jpg_720x720q80.jpg_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/f5084d4671793decf71994abcccfc59e.jpg_720x720q80.jpg_.webp",
       ],
       stock: 35,
@@ -454,16 +474,23 @@ async function getProductById(id) {
     },
     {
       id: 8,
-      name: "Handbag for girls - Bags for girls - Leather Bag for women mini",
-      price: 750,
-      originalPrice: 999,
+      name: "Handbag for girls - Bags for girls - Leather Bag for women mini Avaliable colors: black, white, mehroon, pink and brown",
+      price: 1599,
+      originalPrice: 2299,
       rating: 5.0,
-      image: "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+      image: bag1,
       hoverImage: "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
       description:
         "PRODUCT DETAILS Structure: This Stylish Bag having Moderate capacity that can hold your books, purses, and lots of other things comfortably.",
       images: [
+        bag1,
+        bag2,
+        bag3,
+        bag4,
+        "https://img.drz.lazcdn.com/static/pk/p/98fda812e5e20376bb1acd50f26f0645.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/7be6327d30fb47e53525c44a3bd607b6.jpg_720x720q80.jpg_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/ebed73506c951a6444bba2d80cc7e3b6.jpg_720x720q80.jpg_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
       ],
       stock: 20,

@@ -61,28 +61,26 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
     setIsZoomed(false)
   }
 
-  // Function to redirect to WhatsApp with product details
   const redirectToWhatsApp = () => {
-    // Add Pakistan country code (+92) and remove the first zero
-    const phoneNumber = "923292045738"; // +92 followed by number without the first 0
+    const phoneNumber = "923292045738"; // WhatsApp Business number
     const productName = product?.name || "Product";
     const productPrice = product?.price ? `Rs. ${product.price.toFixed(0)}` : "Price not available";
-    const userId = product?.id || "Unknown User"; // Ensure user ID is available
-    const quantityText = quantity ? `Quantity: ${quantity}\n` : ""; // Only add quantity if available
-  
-    // Create message with product details and user ID
-    const message = `Hello! I would like to order:\n\n*${productName}*\nPrice: ${productPrice}\n${quantityText}\nUser ID: ${userId}\n\nPlease provide payment details.`;
-  
-    // Encode the message for URL
+    const userId = product?.id || "Unknown User";
+    const quantityText = quantity ? `Quantity: ${quantity}\n` : "";
+
+    // Message format
+    const message = `Hello! I would like to order:\n\n*${productName}*\nPrice: ${productPrice}\n${quantityText}User ID: ${userId}\n\nPlease provide payment details.`;
+
+    // Encode message for URL
     const encodedMessage = encodeURIComponent(message);
-  
-    // Create WhatsApp URL
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-  
-    // Redirect to WhatsApp
+
+    // WhatsApp Business API URL with auto-send trick
+    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}&auto_send=true`;
+
+    // Open WhatsApp
     window.open(whatsappURL, "_blank");
-  };
-  
+};
+
 
   const relatedProducts = [
     {

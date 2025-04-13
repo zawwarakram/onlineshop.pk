@@ -3,133 +3,312 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-
+import bag1 from "../assets/bag1.png"
+import bag3 from "../assets/bag3.png"
 // Sample product data
 const productData = [
   {
+    id: 8,
+    name: "Handbag for girls - Leather Bag for women - Shoulder bags for ladies - casual handbag - Phone pouch - Crossbody & Shoulder bag - Purse for girls",
+    price: 1599,
+    originalPrice: 2299,
+    rating: 5.0,
+    image:
+      // "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+      bag1,
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
+    description:
+      "PRODUCT DETAILS Structure: This Stylish Bag having Moderate capacity that can hold your books, purses, and lots of other things comfortably.",
+  },
+  {
+    id: 9,
+    name: "Mobile Phone Stand For Phone Retractable Holder Desk Table",
+    price: 620,
+    originalPrice: 850,
+    rating: 4.9,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/03694657ce3560c31c3fc78adb303ada.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/85e2cb8c83d41b809f5d4ae2ef60bcc8.jpg_720x720q80.jpg_.webp",
+    description:
+      "The multifunctional live broadcast support is a good helper for live broadcast and TV watching.",
+  },
+  {
+    id: 10,
+    name: "Musk Al Mahal - Black And Silver Original Attar For Men - 12ml",
+    price: 2099,
+    originalPrice: 2399,
+    rating: 5.0,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/727e1bfad2d99871c26695cf700b8a4c.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/e9ba9a80f72ea7e7fb03f3ff5d246c5b.jpg_720x720q80.jpg_.webp",
+    description:
+      "Product details of Musk Al Mahal - Black And Silver Original Attar For Men - 12ml Pakistan's No.#1 Attar Brand Affordable Pricing",
+  },
+  {
+    id: 11,
+    name: "The Legend | Finest Classical - Modern Combo Perfume | 50ml",
+    price: 1850,
+    originalPrice: 2350,
+    rating: 5,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/f65408f5ab3da5042e39b6cb570d8e10.png_720x720q80.png_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/f3e1823df660842d398e1f4389a0e329.png_720x720q80.png_.webp",
+    description:
+      "The Legend | Finest Classical - Modern Combo Perfume | Scents N Stories | 50ml",
+  },
+  {
+    id: 12,
+    name: "Chukoor Slim Long Mobile Money and Card holder Wallet",
+    price: 650,
+    originalPrice: 999,
+    rating: 5.0,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/811006b7477e95801e732c00ac93d2f8.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/f1e107a3b8164883718c2b3d05a2c882.jpg_720x720q80.jpg_.webp",
+    description:
+      "Are you tired of struggling with cluttered, bulky wallets that cramp your style?",
+  },
+  {
+    id: 13,
+    name: "Pack of 2 perfumes black car and black market best for gift 100 ml each",
+    price: 1999,
+    originalPrice: 2365,
+    rating: 4.9,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/9cab0addfff3ffd0065dbf210d85a919.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/2118a48d4b8b0e2fd0aefcaa1f14d201.jpg_720x720q80.jpg_.webp",
+    description:
+      "Product details of Impression of Black Car Perfume For Men 100 ml CAR PERFUME FOR MEN 100ML, 100% Original BEST PERFUME FOR MEN",
+  },
+  {
+    id: 14,
+    name: "Florse | Our Best Floral Fragrance | Pocket Perfume | 5ml",
+    price: 750,
+    originalPrice: 799,
+    rating: 4.9,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/cc39782c733f04410bc22cabf70f06ad.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/cc39782c733f04410bc22cabf70f06ad.jpg_720x720q80.jpg_.webp",
+    description:
+      "Product details of Florse | Our Best Floral Fragrance | Pocket Perfume | 5ml 15 Days Easy Returns",
+  },
+  {
+    id: 15,
+    name: "Afnan 9pm EDP 100ml For Men - Best designer perfumes",
+    price: 6199,
+    originalPrice: 6999,
+    rating: 4.9,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/e50bdf271c6c095f35d9c54fba007ed0.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/fe1e9fb7b1aed14167a2279f05fa1775.jpg_720x720q80.jpg_.webp",
+    description:
+      "The Title says it all. 9 pm edp can be found for as low as 16€. Doesn't smell synthetic at all.",
+  },
+  {
+    id: 16,
+    name: "Handbag for girls - Bags for girls - Leather Bag for women - Shoulder bags for ladies - casual handbag - Phone pouch - Crossbody & Shoulder bag for gift - Purse for girls",
+    price: 1599,
+    originalPrice: 2299,
+    rating: 5.0,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      bag3,
+    description:
+      "Handbag for girls - Leather Bag for women - Shoulder bags for ladies - casual handbag - Phone pouch - Crossbody & Shoulder bag - Purse for girls",
+  },
+  {
+    id: 17,
+    name: "[1pc Men'S Fashion Quartz Watch] Men'S Quartz Wrist Watch, Business Style, Round Alloy Case, PU Leather Strap, Non-Rechargeable Battery, Fashionable Casual Business Watches",
+    price: 999,
+    originalPrice: 1099,
+    rating: 5.0,
+    image:
+      "https://img.kwcdn.com/product/fancy/161af33d-8c8b-474b-a005-3cef170a8e62.jpg?imageView2/2/w/800/q/70/format/webp",
+    hoverImage:
+      "https://img.kwcdn.com/product/fancy/0a650c99-bcae-4e4d-a15b-103e694b5b7c.jpg?imageView2/2/w/800/q/70/format/webp",
+    description:
+      "Strap Material: PU Leather Watches case material: Alloy Dial Shape: Round Water Resistance Level: Non - Waterproof Style: Business Movement: Quartz Watches Connection Method: None Drive Mode: Electronic Feature: Other Display Type: Pointer Wireless Property: none Wearing Instructions: Regular Cleaning Power Mode: Battery Powered Operating Voltage: ≤36V Battery Properties: Non-rechargeable Battery ",
+  },
+  {
+    id: 18,
+    name: "Vintage-Inspired Black Stone Ring - Classic Wide Band, Fashionable Copper",
+    price: 600,
+    originalPrice: 899,
+    rating: 5.0,
+    image:
+      "https://img.kwcdn.com/product/fancy/c29350b9-aa00-4d15-a883-4f6d58c65677.jpg?imageView2/2/w/800/q/70/format/webp",
+    hoverImage:
+      "https://img.kwcdn.com/product/fancy/636e0199-5162-413b-ac52-ad882d455fcc.jpg?imageView2/2/w/800/q/70/format/webp",
+    description: `Plating: No Plating
+    Mosaic Material: No Mosaic Material
+    Main Material: Copper
+    Type: Single Ring
+S   tyle: Fashion`,
+  },
+  {
+    id: 20,
+    name: "Retro Square Polarized Glasses for Men and Women - Durable Plastic Frame, Anti-Reflective Gradient Lens, Adjustable Hinges, Ideal for Running and Outdoor Activities, Climbing Sports Eyewearg",
+    price: 699,
+    originalPrice: 850,
+    rating: 5.0,
+    image:
+      "https://img.kwcdn.com/product/fancy/ac4a4124-fb49-42ad-bafe-4fe990cc6872.jpg?imageView2/2/w/800/q/70/format/webp",
+    hoverImage:
+      "https://img.kwcdn.com/product/fancy/0020277c-7265-484e-b285-b82c2a3a8010.jpg?imageView2/2/w/800/q/70/format/webp",
+    description: `Sport Type: Climbing
+Sunglasses Category: Ordinary Decorative Eyeglasses
+Frame Material: PC
+Lens Material: TAC`,
+  },
+  {
+    id: 21,
+    name: "Retro Square Polarized Glasses for Men and Women - Durable Plastic Frame, Anti-Reflective Gradient Lens, Adjustable Hinges, Ideal for Running and Outdoor Activities, Climbing Sports Eyewearg",
+    price: 999,
+    originalPrice: 1099,
+    rating: 5.0,
+    image:
+      "https://img.kwcdn.com/product/fancy/17fcb669-a44e-4a9d-b17c-5dd913d8ee1d.jpg?imageView2/2/w/800/q/70/format/webp",
+    hoverImage:
+      "https://img.kwcdn.com/product/fancy/0020277c-7265-484e-b285-b82c2a3a8010.jpg?imageView2/2/w/800/q/70/format/webp",
+    description: `Sport Type: Climbing
+Sunglasses Category: Ordinary Decorative Eyeglasses
+Frame Material: PC
+Lens Material: TAC`,
+  },
+  {
+    id: 22,
+    name: "Gemstone Rings Fashionable Popular Simple Hundred Matching Size Available Party, Birthday, Holiday Gift",
+    price: 799,
+    originalPrice: 610,
+    rating: 5.0,
+    image:
+      "https://img.kwcdn.com/product/fancy/b6fa2418-0b76-4b26-a306-b19570df568e.jpg?imageView2/2/w/800/q/70/format/webp",
+    hoverImage:
+      "https://img.kwcdn.com/product/fancy/43907d81-c3ce-4cd9-a8d2-eb673e9ef22a.jpg?imageView2/2/w/800/q/70/format/webp",
+    description: `Sport Type: Climbing
+Sunglasses Category: Ordinary Decorative Eyeglasses
+Frame Material: PC
+Lens Material: TAC`,
+  },
+  {
+    id: 19,
+    name: "Professional Hair Clippers And Beard Trimmer Set, Cordless USB Rechargeable Electric Haircut Kit, with Sharp Blade, ≤36V Operating Voltage, with 4 Guide Combs, for Men'S Grooming",
+    price: 1099,
+    originalPrice: 999,
+    rating: 5.0,
+    image:
+      "https://img.kwcdn.com/product/fancy/b1047f82-ccd9-417a-b56b-4c4bd5aed773.jpg?imageView2/2/w/800/q/70/format/webp",
+    hoverImage:
+      "https://img.kwcdn.com/product/fancy/8c19207f-e350-48ba-b01b-2979149da422.jpg?imageView2/2/w/800/q/70/format/webp",
+    description: `Plating: No Plating
+Mosaic Material: Glass
+Main Material: Alloy
+Type: Single Ring
+Style: Glam`,
+  },
+  {
     id: 1,
-    name: "Summer Floral Dress",
-    price: 1388,
-    originalPrice: 1033,
+    name: "Pack of 2 trousers for men_Trending colors trousers for men",
+    price: 1033,
+    originalPrice: 1350,
     rating: 4.8,
-    image: "https://img.drz.lazcdn.com/static/pk/p/f1e807670f4b48d351503533223a2552.jpg_400x400q80.jpg_.webp",
-    hoverImage: "https://img.drz.lazcdn.com/static/pk/p/f1e807670f4b48d351503533223a2552.jpg_400x400q80.jpg_.webp",
-    reviews: 128,
-    colors: ["Black", "White", "Gray"],
-    sizes: ["S", "M", "L", "XL"],
-    isNew: true,
-    category: "Dresses",
-    tags: ["casual", "summer", "cotton"],
+    image:
+      "https://img.drz.lazcdn.com/g/kf/Sa586e24372734166baeb97ccb81c7c6bv.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/g/kf/S7c0f2f0e95f44c82af26684d06c6d55dX.jpg_720x720q80.jpg_.webp",
+    description:
+      "Product details of Pack of 2 trousers for men_Trending colors trousers for men_Stylish trousers",
   },
   {
     id: 2,
-    name: "Queen Printed Pink Color",
-    price: 1499,
-    originalPrice: 1260,
+    name: "Queen Printed Pink Color Lounge Wear Nightwear Sleepwear",
+    price: 1360,
+    originalPrice: 1499,
     rating: 4.6,
-    image: "https://img.drz.lazcdn.com/static/pk/p/65c2b80bf14e5fa429e03ebf80d722ba.jpg_400x400q80.jpg_.webp",
-    hoverImage: "https://img.drz.lazcdn.com/static/pk/p/5804ca79b1763226ce0260865e9bb9cd.jpg_720x720q80.jpg_.webp",
-    reviews: 95,
-    colors: ["Blue", "Black", "Gray"],
-    sizes: ["30", "32", "34", "36"],
-    isNew: false,
-    category: "Bedding",
-    tags: ["home", "bedroom", "comfort"],
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/65c2b80bf14e5fa429e03ebf80d722ba.jpg_400x400q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/5804ca79b1763226ce0260865e9bb9cd.jpg_720x720q80.jpg_.webp",
+    description: "Cozy Women's Lounge Wear with Heart-Printed Trousers",
   },
   {
     id: 3,
-    name: "P47 Wireless Headset Bluetooth",
-    price: 599,
-    originalPrice: null,
+    name: "Premium Laptop Backpack B210 – 16-Inch, Lightweight",
+    price: 1345,
+    originalPrice: 1650,
     rating: 4.9,
-    image: "https://img.drz.lazcdn.com/static/pk/p/b6b1b25d0ee17b9b655348919d62d411.jpg_400x400q80.jpg_.webp",
-    hoverImage: "https://img.drz.lazcdn.com/static/pk/p/c819db68451ae743443f684509a197ae.jpg_720x720q80.jpg_.webp",
-    reviews: 74,
-    colors: ["Black", "Gray", "Navy"],
-    sizes: [],
-    isNew: true,
-    category: "Electronics",
-    tags: ["audio", "wireless", "tech"],
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/db38fdcc53b7892dcdb2bd4c74d787f9.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/b669ad9f6eac1fbcb91c1cb5a1d71e2a.jpg_720x720q80.jpg_.webp",
+    description:
+      "Product details of Premium Laptop Backpack B210 – 16-Inch, Lightweight & Water-Repellent",
   },
   {
     id: 4,
-    name: "7 in 1 Smart Watch - 7 Straps Smart watch",
-    price: 2365,
-    originalPrice: 1999,
-    rating: 4.9,
-    image: "https://img.drz.lazcdn.com/static/pk/p/e9901bff069f91e5e2cf26d10c166bd2.jpg_720x720q80.jpg_.webp",
-    hoverImage: "https://img.drz.lazcdn.com/static/pk/p/1ac390f1dc83c5f34a6f2b2cf3166727.jpg_720x720q80.jpg_.webp",
-    reviews: 62,
-    colors: ["Black", "Brown", "Tan"],
-    sizes: [],
-    isNew: false,
-    category: "Watches",
-    tags: ["smart", "tech", "accessories"],
+    name: "Waterproof Fanny Pack Waist Belt Bag Purse Outdoor Sport",
+    price: 1350,
+    originalPrice: 1450,
+    rating: 5.0,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/e550a04eb5e7be012be302910dd3f131.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/c4a5ec30f2158d9cbc8bcf6b61949ac0.jpg_720x720q80.jpg_.webp",
+    description:
+      "Product details of Waterproof Fanny Pack Waist Belt Bag Purse Outdoor Sport Running Camping Waist pack",
   },
   {
     id: 5,
-    name: "Classic Oxford Shirt",
-    price: 899,
-    originalPrice: null,
-    rating: 4.4,
-    image: "https://img.drz.lazcdn.com/static/pk/p/e9901bff069f91e5e2cf26d10c166bd2.jpg_720x720q80.jpg_.webp",
-    hoverImage: "https://img.drz.lazcdn.com/static/pk/p/1ac390f1dc83c5f34a6f2b2cf3166727.jpg_720x720q80.jpg_.webp",
-    reviews: 53,
-    colors: ["White", "Blue", "Pink"],
-    sizes: ["S", "M", "L", "XL"],
-    isNew: false,
-    category: "Shirts",
-    tags: ["formal", "business", "classic"],
+    name: "7 in 1 Smart Watch - 7 Straps Smart watch",
+    price: 1999,
+    originalPrice: 2365,
+    rating: 4.9,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/e9901bff069f91e5e2cf26d10c166bd2.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/1ac390f1dc83c5f34a6f2b2cf3166727.jpg_720x720q80.jpg_.webp",
+    description:
+      "7-in-1 Smart Watch: Your Ultimate Wearable Companion Experience the Future of Smart Watches",
   },
   {
     id: 6,
-    name: "Stylish 400ml Glass Water Bottle for Girls",
-    price: 650,
-    originalPrice: 499,
-    rating: 4.9,
-    image: "https://img.drz.lazcdn.com/static/pk/p/2f0fab5cf2baabc839fcd4586ca46dd0.jpg_720x720q80.jpg_.webp",
-    hoverImage: "https://img.drz.lazcdn.com/static/pk/p/f5084d4671793decf71994abcccfc59e.jpg_720x720q80.jpg_.webp",
-    reviews: 41,
-    colors: ["Cream", "Gray", "Black"],
-    sizes: [],
-    isNew: false,
-    category: "Kitchen",
-    tags: ["hydration", "glass", "eco-friendly"],
+    name: "Water Bottles, Glass/Plastic 400 ML Water bottles",
+    price: 599,
+    originalPrice: 850,
+    rating: 4.6,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/12fb392c98ac9dd27d7117520f9728ad.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/c0b003fab3f92db611935fce72b01ed2.jpg_720x720q80.jpg_.webp",
+    description:
+      "Product details of Water Bottles, Glass/Plastic 400 ML Water bottles, Sports water bottles Double walled",
   },
   {
     id: 7,
-    name: "Water Bottles, Glass/Plastic 400 ML Water",
-    price: 850,
-    originalPrice: 599,
-    rating: 4.6,
-    image: "https://img.drz.lazcdn.com/static/pk/p/12fb392c98ac9dd27d7117520f9728ad.jpg_720x720q80.jpg_.webp",
-    hoverImage: "https://img.drz.lazcdn.com/static/pk/p/c0b003fab3f92db611935fce72b01ed2.jpg_720x720q80.jpg_.webp",
-    reviews: 112,
-    colors: ["Black", "White", "Red"],
-    sizes: [],
-    isNew: true,
-    category: "Kitchen",
-    tags: ["hydration", "plastic", "portable"],
-  },
-  {
-    id: 8,
-    name: "Handbag for girls - Bags for girls",
-    price: 999,
+    name: "Stylish 400ml Glass Water Bottle for Girls & Boys",
+    price: 499,
     originalPrice: 650,
-    rating: 5.0,
-    image: "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
-    hoverImage: "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
-    reviews: 38,
-    colors: ["Black", "Navy", "Beige"],
-    sizes: [],
-    isNew: false,
-    category: "Bags",
-    tags: ["fashion", "accessories", "handbag"],
+    rating: 4.9,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/2f0fab5cf2baabc839fcd4586ca46dd0.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/f5084d4671793decf71994abcccfc59e.jpg_720x720q80.jpg_.webp",
+    description:
+      "Product details of Stylish 400ml Glass Water Bottle for Girls & Boys - Insulated Leakproof Design",
   },
-]
+];
 
 // Get unique categories from product data
-const categories = [...new Set(productData.map((product) => product.category))]
+const categories = []
 
 // Featured collections
 const collections = [
@@ -300,7 +479,7 @@ export default function ProductsPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-bold text-white mb-1">{collection.name}</h3>
+                <h3 className="text-xl font-bold text-white mb-1 truncate line-clamp-2 ">{collection.name}</h3>
                 <p className="text-white/80 text-sm mb-3">{collection.count} Products</p>
                 <Link
                   href="#"
@@ -639,14 +818,14 @@ export default function ProductsPage() {
               <p className="text-sm text-gray-500 mb-4 sm:mb-0">
                 Showing{" "}
                 <span className="font-medium text-gray-900">
-                  {indexOfFirstProduct + 1}-{Math.min(indexOfLastProduct, filteredProducts.length)}
+                  {indexOfFirstProduct + 1}-{Math.min(indexOfLastProduct, filteredProducts?.length)}
                 </span>{" "}
-                of <span className="font-medium text-gray-900">{filteredProducts.length}</span> products
+                of <span className="font-medium text-gray-900">{filteredProducts?.length}</span> products
               </p>
             </div>
 
             {/* No results message */}
-            {currentProducts.length === 0 && (
+            {currentProducts?.length === 0 && (
               <div className="bg-white rounded-xl shadow-sm p-8 text-center">
                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg
@@ -758,7 +937,7 @@ export default function ProductsPage() {
                   {/* Product Info */}
                   <div className="p-5">
                     <Link href={`/product/${product.id}`} className="block">
-                      <h3 className="text-lg font-medium text-gray-900 mb-1 hover:text-rose-600 transition-colors">
+                      <h3 className="text-lg font-medium text-gray-900 mb-1 hover:text-rose-600 transition-colors line-clamp-2">
                         {product.name}
                       </h3>
                     </Link>
@@ -781,21 +960,21 @@ export default function ProductsPage() {
                             />
                           </svg>
                         ))}
-                        <span className="text-xs text-gray-500 ml-1">({product.reviews})</span>
+                        <span className="text-xs text-gray-500 ml-1">({product?.reviews})</span>
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
                       <div>
-                        <span className="text-lg font-bold text-gray-900">Rs. {product.price.toFixed(0)}</span>
-                        {product.originalPrice && (
+                        <span className="text-lg font-bold text-gray-900">Rs. {product?.price?.toFixed(0)}</span>
+                        {product?.originalPrice && (
                           <span className="text-sm text-gray-500 line-through ml-2">
-                            Rs. {product.originalPrice.toFixed(0)}
+                            Rs. {product?.originalPrice?.toFixed(0)}
                           </span>
                         )}
                       </div>
 
                       {/* Color options */}
-                      {product.colors.length > 0 && (
+                      {product?.colors?.length > 0 && (
                         <div className="flex items-center gap-1">
                           {product.colors.slice(0, 3).map((color) => (
                             <div
@@ -836,8 +1015,8 @@ export default function ProductsPage() {
                               title={color}
                             />
                           ))}
-                          {product.colors.length > 3 && (
-                            <span className="text-xs text-gray-500">+{product.colors.length - 3}</span>
+                          {product?.colors?.length > 3 && (
+                            <span className="text-xs text-gray-500">+{product?.colors?.length - 3}</span>
                           )}
                         </div>
                       )}
@@ -852,7 +1031,7 @@ export default function ProductsPage() {
               <div className="flex justify-center mt-12">
                 <nav className="flex items-center gap-1">
                   <button
-                    onClick={() => paginate(Math.max(1, currentPage - 1))}
+                    onClick={() => paginate(Math?.max(1, currentPage - 1))}
                     disabled={currentPage === 1}
                     className={`w-10 h-10 rounded-full flex items-center justify-center ${
                       currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "text-gray-700 hover:bg-gray-100"

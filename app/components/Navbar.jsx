@@ -12,12 +12,14 @@ import {
   UserProfile,
 } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   const location = usePathname();
+  
   return (
     <>
       {location === "/sigin" || location === "/youtubezawwar12" ? (
@@ -59,10 +61,13 @@ export default function Navbar() {
                 </Link>
                 <Link
                   className="nav-link relative text-gray-700 hover:text-rose-500 transition-all duration-300 after:block after:w-0 after:h-0.5 after:bg-rose-500 after:transition-all after:duration-300 after:absolute after:left-1/2 after:-bottom-1 hover:after:w-full hover:after:left-0 hover:scale-105"
-                  href="/categories"
+                  href="/contact"
                 >
-                  Categories
+                  Contact us
                 </Link>
+                {/* Add Email Link */}
+                
+              
               </div>
 
               {/* Actions */}
@@ -108,6 +113,13 @@ export default function Navbar() {
                 </Link>
                 <Link className="mobile-link" href="/categories">
                   Categories
+                </Link>
+                {/* Add Email Link in Mobile Menu */}
+                <Link
+                  className="mobile-link"
+                  href="mailto:shopingonlines.pk@gmail.com"
+                >
+                  Email Us
                 </Link>
                 <SignedOut>
                   <SignInButton mode="model" forceRedirectUrl={"/"}>

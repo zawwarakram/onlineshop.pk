@@ -4,17 +4,19 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Star, Heart } from "lucide-react";
-
+import bag1 from "../assets/bag1.png"
+import bag3 from "../assets/bag3.png"
 // Import the product data
 const products = [
   {
     id: 8,
-    name: "Handbag for girls - Bags for girls - Leather Bag for women mini",
-    price: 750,
-    originalPrice: 999,
+    name: "Handbag for girls - Leather Bag for women - Shoulder bags for ladies - casual handbag - Phone pouch - Crossbody & Shoulder bag - Purse for girls",
+    price: 1599,
+    originalPrice: 2299,
     rating: 5.0,
     image:
-      "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+      // "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+      bag1,
     hoverImage:
       "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
     description:
@@ -113,16 +115,16 @@ const products = [
   },
   {
     id: 16,
-    name: "Top 5 Spray Samples Set | For Men | Pocket Perfume | 5ml",
-    price: 1199,
-    originalPrice: 1399,
+    name: "Handbag for girls - Bags for girls - Leather Bag for women - Shoulder bags for ladies - casual handbag - Phone pouch - Crossbody & Shoulder bag for gift - Purse for girls",
+    price: 1599,
+    originalPrice: 2299,
     rating: 5.0,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
     hoverImage:
-      "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
+      bag3,
     description:
-      "Top 5 Sample | For Men | Pocket Perfume These are our all-time top-rated fragrance samples",
+      "Handbag for girls - Leather Bag for women - Shoulder bags for ladies - casual handbag - Phone pouch - Crossbody & Shoulder bag - Purse for girls",
   },
   {
     id: 17,

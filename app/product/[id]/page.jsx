@@ -19,6 +19,74 @@ async function getProductById(id) {
   // Sample product data
   const products = [
     {
+      "id": 24,
+      "name": "2Pc Stitched Unique Dress for Girls - Trendy, Comfortable, Easy to Wear",
+      "price": 1999,
+      "originalPrice": 2399,
+      "rating": 4.7,
+      image: "https://img.drz.lazcdn.com/static/pk/p/20161591d66ea7c1e591e0ee2abee96c.jpg_720x720q80.jpg_.webp",
+      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/6dd54bb6ed755843ec97774054e983cc.jpg_720x720q80.jpg_.webp",
+      "description": "Trendy and vibrant 2Pc stitched dress set for girls. This outfit includes a plain red long top paired with stylish black floral printed trousers. Made with breathable fabric, it's perfect for casual outings, daily wear, or festive occasions. The bold red top and eye-catching floral bottoms make it a standout piece in your wardrobe.",
+      images: [
+        "https://img.drz.lazcdn.com/static/pk/p/20161591d66ea7c1e591e0ee2abee96c.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/c0c4288daab729d4f4e27dae2e48a5ee.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/6dd54bb6ed755843ec97774054e983cc.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/77e5497a5236aea1aaef4bcc2f36f532.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/8e5ad2870a3a984dfabc0fc4d34c07a5.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/33ae39844545d056f9df240271599bc2.jpg_120x120q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/ada04d28d257dcdd7007ca9b325a595c.jpg_720x720q80.jpg_.webp",
+      ],
+      "stock": 25,
+      "sku": "DRESS-RED-FLORAL-025",
+      "brand": "StyleZone",
+      "category": "Clothing",
+      "tags": ["girls dress", "stitched suit", "2Pc dress", "floral trousers", "trendy outfit"],
+      "features": [
+        "Breathable cotton blend fabric",
+        "Elegant red long top",
+        "Vibrant floral printed trousers",
+        "Elastic waist for easy fit",
+        "Perfect for casual and festive wear",
+        "Easy to wash and maintain"
+      ],
+      "specifications": [
+        { "name": "Brand", "value": "StyleZone" },
+        { "name": "Material", "value": "Cotton Blend" },
+        { "name": "Size Range", "value": "S, M, L, XL" },
+        { "name": "Gender", "value": "Girls" },
+        { "name": "Style", "value": "Casual / Ethnic Fusion" },
+        { "name": "Number of Items", "value": "2 (Top and Bottom)" },
+        { "name": "Color", "value": "Red & Multicolor" },
+        { "name": "Pattern", "value": "Solid & Floral Print" },
+        { "name": "Care Instructions", "value": "Machine Wash Cold" },
+        { "name": "Country of Origin", "value": "Pakistan" }
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Hania A.",
+          "avatar": "/placeholder.svg?height=40&width=40",
+          "rating": 5,
+          "date": "4 days ago",
+          "title": "Beautiful and unique!",
+          "comment": "The colors are super vibrant, and the floral design on the trousers really stands out. Got lots of compliments wearing this!",
+          "helpful": 10,
+          "images": []
+        },
+        {
+          "id": 2,
+          "user": "Noor F.",
+          "avatar": "/placeholder.svg?height=40&width=40",
+          "rating": 4,
+          "date": "1 week ago",
+          "title": "Nice for casual wear",
+          "comment": "Good fabric quality. The red top is simple and elegant, while the pants are more stylish. Loved the combo.",
+          "helpful": 6,
+          "images": []
+        }
+      ]
+    },  
+    {
       id: 2,
       name: "Queen Printed Pink Color Lounge Wear Nightwear Sleepwear",
       price: 1360,

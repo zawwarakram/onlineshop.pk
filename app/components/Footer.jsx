@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
+import logo from "../assets/logoshop.png"
 
 export default function Footer() {
     const scrollToTop = () => {
@@ -29,30 +30,16 @@ export default function Footer() {
 
     const images = ["https://img.lazcdn.com/us/domino/56915ba8-b2c0-4caf-b3a1-7e0f3d2d45cf_PK-139-84.png","https://img.lazcdn.com/us/domino/dd8e0447-8052-44f3-8ab2-b24c56a2491f_PK-139-84.png","https://img.lazcdn.com/us/domino/5ba8a652-1445-45cb-a2a5-ed6043004243_PK-63-48.png"]
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-gray-900 px-4 text-gray-300">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-rose-600"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
+              <div className="w-22 h-22  bg-white rounded-full flex items-center justify-center mr-3">
+              <Image src={logo} alt="Logo" width={100} height={100} className="h-34 w-34 py-3" />
               </div>
-              <span className="text-white text-xl font-bold">Shop Online</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               We're dedicated to providing you with the best shopping experience, offering premium products at

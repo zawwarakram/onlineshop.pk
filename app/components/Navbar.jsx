@@ -12,6 +12,8 @@ import {
   UserProfile,
 } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import logo from "../assets/logoshop.png"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,11 +29,11 @@ export default function Navbar() {
       ) : (
         <nav className="bg-transparent px-5 dark:bg-gray-900 shadow-md">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-            <div className="flex justify-between items-center h-20">
+            <div className="flex justify-between items-center h-22">
               {/* Logo */}
-              <div className="text-2xl font-bold text-gray-800 dark:text-white">
-                Shop Online
-              </div>
+              {/* <div className="text-5xl font-bold text-gray-800 dark:text-white"> */}
+<Image src={logo} alt="Logo" width={100} height={100} className="h-38 w-34" />
+              {/* </div> */}
 
               {/* Nav Links */}
               <div className="hidden md:flex space-x-6">

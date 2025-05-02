@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Star, Heart } from "lucide-react";
-import bag1 from "../assets/bag1.png"
-import bag3 from "../assets/bag3.png"
+import bag1 from "../assets/bag1.png";
+import bag3 from "../assets/bag3.png";
 // Import the product data
 const products = [
   {
@@ -15,13 +15,43 @@ const products = [
     originalPrice: 2299,
     rating: 5.0,
     image:
-      // "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+      "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
       bag1,
     hoverImage:
       "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
     description:
       "PRODUCT DETAILS Structure: This Stylish Bag having Moderate capacity that can hold your books, purses, and lots of other things comfortably.",
   },
+  {
+    id: 24,
+    name: "2Pc Stitched Unique Dress for Girls - Trendy, Comfortable, Easy to Wear",
+    price: 2199,
+    originalPrice: 2299,
+    rating: 5.0,
+    image:
+      "https://img.drz.lazcdn.com/static/pk/p/20161591d66ea7c1e591e0ee2abee96c.jpg_720x720q80.jpg_.webp",
+      bag1,
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/8e5ad2870a3a984dfabc0fc4d34c07a5.jpg_720x720q80.jpg_.webp",
+    description: `2 PCs stitched unique dress for girls 
+
+    fabric linen 
+
+    trendy
+
+    comfortable
+
+    quality material
+
+    easy to wear and easy to wash
+
+    medium size : chest 20.5 shirt length 35 trouser length 38
+
+    large size : chest 21 shirt length 36 trouser length 38
+
+    plain shirt and random printed trouser for girls`,
+  },
+
   {
     id: 9,
     name: "Mobile Phone Stand For Phone Retractable Holder Desk Table",
@@ -121,8 +151,7 @@ const products = [
     rating: 5.0,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
-    hoverImage:
-      bag3,
+    hoverImage: bag3,
     description:
       "Handbag for girls - Leather Bag for women - Shoulder bags for ladies - casual handbag - Phone pouch - Crossbody & Shoulder bag - Purse for girls",
   },

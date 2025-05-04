@@ -91,3 +91,13 @@
 //     </main>
 //   );
 // }
+
+import React from 'react'
+
+const page = () => {
+  return (
+    <div>jjj page</div>
+  )
+}
+
+export default page

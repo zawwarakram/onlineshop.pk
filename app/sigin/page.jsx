@@ -1,63 +1,57 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useSignIn, useSignUp } from "@clerk/nextjs";
+import { useSignIn, useSignUp, useUser } from "@clerk/nextjs";
 
 export default function AuthPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("login");
+
+  const { signIn } = useSignIn();
+  const { signUp } = useSignUp();
+  const { user, isSignedIn } = useUser();
+
+  // Form submission
   async function onSubmit(event) {
-      event.preventDefault();
-      setIsLoading(true);
-      
-      setTimeout(() => {
-          setIsLoading(false);
-        }, 1000);
+    event.preventDefault();
+    setIsLoading(true);
+
+    // Fake loader logic
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }
+
+  // Print user info if signed in
+  useEffect(() => {
+    if (isSignedIn && user) {
+      console.log("User ID:", user.id);
+      console.log("Name:", user.fullName);
+      console.log("Email:", user.primaryEmailAddress?.emailAddress);
     }
-    
-    const { signIn } = useSignIn();
-    const { signUp } = useSignUp();
-  const hanldeAuthenticateUsingSocial = async (provider) => {
+  }, [isSignedIn, user]);
+
+  // Social auth
+  const handleAuthenticateUsingSocial = async (provider) => {
     try {
-      if (activeTab === "login") {
-        await signIn.authenticateWithRedirect({
-          strategy: `oauth_${provider}`,
-          redirectUrl: "/",
-          redirectUrlComplete: "/",
-        });
-      } else {
-        await signUp.authenticateWithRedirect({
-          strategy: `oauth_${provider}`,
-          redirectUrl: "/",
-          redirectUrlComplete: "/",
-        });
+      const strategy = `oauth_${provider}`;
+      const redirectConfig = {
+        strategy,
+        redirectUrl: "/",
+        redirectUrlComplete: "/",
+      };
+
+      if (activeTab === "login" && signIn) {
+        await signIn.authenticateWithRedirect(redirectConfig);
+      } else if (activeTab === "signup" && signUp) {
+        await signUp.authenticateWithRedirect(redirectConfig);
       }
     } catch (error) {
       console.error("Authentication error:", error);
     }
   };
-
-  //   const hanldeAuthenticateUsingSocial = async (provider) => {
-  //     try {
-  //       if (activeTab === "signup" && signUp) {
-  //         await signUp.authenticateWithRedirect({
-  //           strategy: `oauth_${provider}`,
-  //           redirectUrl: "/",
-  //           redirectUrlComplete: "/",
-  //         })
-  //       } else if (activeTab === "login" && signIn) {
-  //         await signIn.authenticateWithRedirect({
-  //           strategy: `oauth_${provider}`,
-  //           redirectUrl: "/",
-  //           redirectUrlComplete: "/",
-  //         })
-  //       }
-  //     } catch (error) {
-  //       console.error("Authentication error:", error)
-  //     }
-  //   }
 
   return (
     <div className="flex  flex-col items-center justify-center md:grid  md:gap-0">
@@ -179,7 +173,7 @@ export default function AuthPage() {
                   <button
                     type="button"
                     disabled={isLoading}
-                    onClick={() => hanldeAuthenticateUsingSocial("google")}
+                    onClick={() => handleAuthenticateUsingSocial("google")}
                     className="inline-flex h-10 cursor-pointer items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   >
                     <Image
@@ -194,7 +188,7 @@ export default function AuthPage() {
                   <button
                     type="button"
                     disabled={isLoading}
-                    onClick={() => hanldeAuthenticateUsingSocial("github")}
+                    onClick={() => handleAuthenticateUsingSocial("github")}
                     className="inline-flex h-10 cursor-pointer items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   >
                     <Image
@@ -207,7 +201,7 @@ export default function AuthPage() {
                   <button
                     type="button"
                     disabled={isLoading}
-                    onClick={() => hanldeAuthenticateUsingSocial("facebook")}
+                    onClick={() => handleAuthenticateUsingSocial("facebook")}
                     className="inline-flex h-10 cursor-pointer items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   >
                     <Image

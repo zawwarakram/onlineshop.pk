@@ -60,38 +60,38 @@
 
 
 
-import { auth } from "@clerk/nextjs/server"
-import nodemailer from "nodemailer"
+// import { auth } from "@clerk/nextjs/server"
+// import nodemailer from "nodemailer"
 
-export async function POST(req) {
-  try {
-    const { userId } = auth()
+// export async function POST() {
+//   try {
+//     const { userId } = auth()
 
-    if (!userId) {
-      return new Response("Unauthorized", { status: 401 })
-    }
+//     if (!userId) {
+//       return new Response("Unauthorized", { status: 401 })
+//     }
 
-    // Example: Send an email with the user ID
-    const transporter = nodemailer.createTransport({
-      service: "Gmail",
-      auth: {
-        user: "shopingonlines.pk@gmail.com",
-        pass: "xoxz zybb gvvh emaj",
-      },
-    })
+//     // Example: Send an email with the user ID
+//     const transporter = nodemailer.createTransport({
+//       service: "Gmail",
+//       auth: {
+//         user: "shopingonlines.pk@gmail.com",
+//         pass: "xoxz zybb gvvh emaj",
+//       },
+//     })
 
-    await transporter.sendMail({
-        from: `"ShopMart Website" <shopingonlines.pk@gmail.com>`,
-      to: "shopingonlines.pk@gmail.com",
-subject: "New User Signup",
-      html: `<p>A new user signed up. Clerk user ID: <strong>${userId}</strong></p>`,
-    })
+//     await transporter.sendMail({
+//         from: `"ShopMart Website" <shopingonlines.pk@gmail.com>`,
+//       to: "shopingonlines.pk@gmail.com",
+// subject: "New User Signup",
+//       html: `<p>A new user signed up. Clerk user ID: <strong>${userId}</strong></p>`,
+//     })
 
-    return new Response(JSON.stringify({ message: "Email sent" }), {
-      status: 200,
-    })
-  } catch (error) {
-    console.error("API Error:", error)
-    return new Response("Internal Server Error", { status: 500 })
-  }
-}
+//     return new Response(JSON.stringify({ message: "Email sent" }), {
+//       status: 200,
+//     })
+//   } catch (error) {
+//     console.error("API Error:", error)
+//     return new Response("Internal Server Error", { status: 500 })
+//   }
+// }

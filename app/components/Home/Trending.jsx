@@ -303,8 +303,8 @@ export default function TrendingProducts() {
   ];
 
   return (
-    <section className="py-16 px-6 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:px-6 px-3 bg-gray-50">
+      <div className="container mx-auto md:px-4 px-1">
         <div className="flex justify-between items-end mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -334,7 +334,7 @@ export default function TrendingProducts() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-6">
           {products.map((product) => (
             <a href={`/product/${product.id}`}>
             <div
@@ -344,7 +344,7 @@ export default function TrendingProducts() {
               onMouseLeave={() => setHoveredProduct(null)}
             >
               {/* Product Image */}
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-64 md:h-70 overflow-hidden">
                 <Image
                   src={
                     hoveredProduct === product.id

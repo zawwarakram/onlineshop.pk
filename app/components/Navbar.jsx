@@ -32,8 +32,10 @@ export default function Navbar() {
             <div className="flex justify-between items-center h-22">
               {/* Logo */}
               {/* <div className="text-5xl font-bold text-gray-800 dark:text-white"> */}
-<Image src={logo} alt="Logo" width={100} height={100} className="h-38 w-34" />
+              <Link href="/">
+<Image src={logo} alt="Logo" width={100} height={100} className="h-34 -ml-4 md:ml-0 w-44 object-fill" />
               {/* </div> */}
+              </Link>
 
               {/* Nav Links */}
               <div className="hidden md:flex space-x-6">
@@ -104,16 +106,16 @@ export default function Navbar() {
                 <Link className="mobile-link" href="/">
                   Home
                 </Link>
-                <Link className="mobile-link" href="/about">
-                  About
+                <Link className="mobile-link" href="/collections">
+                  Collections
                 </Link>
                 <Link className="mobile-link" href="/contact">
                   Contact
                 </Link>
-                <Link className="mobile-link" href="/products">
+                <Link className="mobile-link" href="/Products">
                   Products
                 </Link>
-                <Link className="mobile-link" href="/categories">
+                <Link className="mobile-link" href="/Products">
                   Categories
                 </Link>
                 {/* Add Email Link in Mobile Menu */}

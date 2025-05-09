@@ -361,16 +361,24 @@ export default function ProductsPage() {
     // Filter by price range
     result = result.filter((product) => product.price >= priceRange[0] && product.price <= priceRange[1])
 
-    // Filter by search query
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase()
-      result = result.filter(
-        (product) =>
-          product.name.toLowerCase().includes(query) ||
-          product.category.toLowerCase().includes(query) ||
-          product.tags.some((tag) => tag.toLowerCase().includes(query)),
-      )
-    }
+   // Filter by search query
+if (searchQuery) {
+  const query = searchQuery.toLowerCase()
+  result = result.filter((product) => {
+    const name = product.name?.toLowerCase() || ""
+    const category = product.category?.toLowerCase() || ""
+    const tags = Array.isArray(product.tags)
+      ? product.tags.map((tag) => tag?.toLowerCase() || "")
+      : []
+
+    return (
+      name.includes(query) ||
+      category.includes(query) ||
+      tags.some((tag) => tag.includes(query))
+    )
+  })
+}
+
 
     // Sort products
     switch (sortOption) {

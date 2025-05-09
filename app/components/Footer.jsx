@@ -37,8 +37,8 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="w-22 h-22  bg-white rounded-full flex items-center justify-center mr-3">
-              <Image src={logo} alt="Logo" width={100} height={100} className="h-34 w-34 py-3" />
+              <div className="w-36 h-16 bg-white rounded-xl flex p-2 items-center justify-center mr-3">
+              <Image src={logo} alt="Logo" width={100} height={100} className="h-32 w-38 py-4" />
               </div>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">

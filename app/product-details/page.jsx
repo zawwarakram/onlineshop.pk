@@ -4,6 +4,11 @@ import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Star, Heart, Share2, ShoppingCart, Truck, RotateCcw, Shield, ChevronRight, Minus, Plus } from 'lucide-react'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/scrollbar";
+import { Scrollbar, Autoplay } from "swiper/modules";
+
 
 export default function ProductDetail({ product, relatedProductsPromise, reviewsPromise }) {
   const [mainImage, setMainImage] = useState(product?.image)
@@ -146,11 +151,11 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
     },
   ]
   return (
-    <div className="bg-gray-50 min-h-screen pb-12">
+    <div className=" min-h-screen pb-12">
       {/* Breadcrumb */}
-      <div className="bg-white mt-10">
+      <div className=" mt-10">
         <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center text-sm text-gray-500">
+          <div className="flex items-center text-sm md:text-[14.7px] text-gray-500">
             <Link href="/" className="hover:text-rose-600 transition-colors">
               Home
             </Link>
@@ -165,21 +170,21 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
       </div>
 
       {/* Product Detail Section */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container md:mx-auto md:px-4 px-0 py-8">
         <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 p-4 md:p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:mb-12 lg:grid-cols-12 gap-8 p-4 md:mt-8 md:p-6">
             {/* Product Images - Left Column */}
-            <div className="lg:col-span-5">
-              <div className="sticky top-24">
+            <div className="lg:col-span-5 ">
+              <div className="sticky top-4">
                 {/* Main Image with Zoom */}
                 <div
                   ref={imageContainerRef}
-                  className="relative h-80 md:h-96 lg:h-[500px] mb-4 rounded-lg overflow-hidden border cursor-zoom-in"
+                  className="relative h-80 md:h-96 lg:h-[500px] mb-4 rounded-lg overflow-hidden border border-gray-200 cursor-zoom-in"
                   onMouseMove={handleMouseMove}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <Image src={mainImage || "/placeholder.svg"} alt={product?.name} fill className="object-contain" />
+                  <Image src={mainImage || "/placeholder.svg"} alt={product?.name} fill className="object-cover border-none" />
 
                   {discount && (
                     <div className="absolute top-4 left-4">
@@ -206,25 +211,44 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                   )}
                 </div>
 
-                {/* Thumbnail Images */}
-                <div className="flex gap-2 overflow-x-auto pb-2">
-                  {product?.images?.map((image, index) => (
-                    <button
-                      key={index}
-                      className={`relative w-20 h-20 rounded-md overflow-hidden border-2 ${
-                        mainImage === image ? "border-rose-500" : "border-gray-200"
-                      }`}
-                      onClick={() => setMainImage(image)}
-                    >
-                      <Image
-                        src={image || "/placeholder.svg"}
-                        alt={`${product.name} - Image ${index + 1}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </button>
-                  ))}
-                </div>
+<div className="border-b border-gray-200 pb-4">
+  <Swiper
+    spaceBetween={10}
+    slidesPerView={"auto"}
+    scrollbar={{ draggable: true }}
+    autoplay={{
+      delay: 2000, // 2 seconds
+      disableOnInteraction: false,
+    }}
+    loop={true}
+    modules={[Scrollbar, Autoplay]}
+    className="w-full"
+  >
+    {product?.images?.map((image, index) => (
+      <SwiperSlide
+        key={index}
+        style={{ width: "110px" }}
+        className="!w-[110px] !h-[110px]"
+      >
+        <button
+          onClick={() => setMainImage(image)}
+          className={`relative w-full h-full rounded-md overflow-hidden border-2 ${
+            mainImage === image ? "border-rose-500" : "border-gray-200"
+          }`}
+        >
+          <Image
+            src={image || "/placeholder.svg"}
+            alt={`${product.name} - Image ${index + 1}`}
+            fill
+            className="object-cover"
+          />
+        </button>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</div>
+
+
 
                 {/* Share Buttons */}
                 <div className="flex items-center justify-center mt-6 space-x-4">
@@ -495,13 +519,13 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
       </div>
 
       {/* Related Products */}
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto md:px-5 px-4  py-8">
         <h2 className="text-2xl font-bold mb-6">Related Products</h2>
         <RelatedProducts relatedProductsPromise={relatedProductsPromise} />
       </div>
 
       {/* Recently Viewed */}
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto md:px-5 px-4 py-8">
         <h2 className="text-2xl font-bold mb-6">Recently Viewed</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {relatedProducts?.slice(0, 4)?.map((product) => (

@@ -9,6 +9,7 @@ import watch002 from "../assets/watch002.png"
 // Sample product data
 const productData = [
   {
+    // ..
     // product link:  Women Mesh Magnetic Buckle Starry Sky Luxury Fashion Watch with Magnetic Strip for College/Office
     id: 30,
     name: "Luxury Starry Sky Women's Watch – Magnetic Elegance for Every Day",

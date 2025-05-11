@@ -5,9 +5,26 @@ import Image from "next/image"
 import Link from "next/link"
 import bag1 from "../assets/bag1.png"
 import bag3 from "../assets/bag3.png"
+import watch002 from "../assets/watch002.png"
 // Sample product data
 const productData = [
   {
+    // product link:  Women Mesh Magnetic Buckle Starry Sky Luxury Fashion Watch with Magnetic Strip for College/Office
+    id: 30,
+    name: "Luxury Starry Sky Women's Watch – Magnetic Elegance for Every Day",
+    price: 700,
+    originalPrice: 999,
+    rating: 4.9,
+    image:
+     watch002,
+    hoverImage:
+      "https://img.drz.lazcdn.com/static/pk/p/aeaafa80c9e26fbc4d4c2350495097d3.jpg_720x720q80.jpg_.webp",
+    description:
+     ` 100% Brand new and well packed in retail packing as purchased from manufacturer.
+- This product is highly recommended by many customers around the globe.
+- No any side effects have been registered yet.
+- This product has most of the positive reviews on international e-commerce sites like amazon or aliexpress.`,
+  },{
     id: 8,
     name: "Handbag for girls - Leather Bag for women - Shoulder bags for ladies - casual handbag - Phone pouch - Crossbody & Shoulder bag - Purse for girls",
     price: 1599,

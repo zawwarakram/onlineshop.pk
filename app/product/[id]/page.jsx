@@ -1,32 +1,134 @@
-import { Suspense } from "react"
-import { notFound } from "next/navigation"
-import ProductDetail from "../../product-details/page"
-import ProductDetailSkeleton from "../../components/product-detail-skeleton"
-import bag1 from '../../assets/bag1.png'
-import bag2 from '../../assets/bag2.png'
-import bag3 from '../../assets/bag3.png'
-import bag4 from '../../assets/bag4.png'
-import bottle1 from '../../assets/bottle1.png'
-import bottle2 from '../../assets/bottle2.png'
+import { Suspense } from "react";
+import { notFound } from "next/navigation";
+import ProductDetail from "../../product-details/page";
+import ProductDetailSkeleton from "../../components/product-detail-skeleton";
+import bag1 from "../../assets/bag1.png";
+import bag2 from "../../assets/bag2.png";
+import bag3 from "../../assets/bag3.png";
+import bag4 from "../../assets/bag4.png";
+import watch002 from "../../assets/watch002.png";
+import watch01 from "../../assets/watch01.png";
+import watch02 from "../../assets/watch02.png";
+import watch03 from "../../assets/watch03.png";
+import watch04 from "../../assets/watch04.png";
+// import watch05 from "../../assets/watch05.png";
+import bottle1 from "../../assets/bottle1.png";
+import bottle2 from "../../assets/bottle2.png";
 // import  { Product, Review } from "@/types"
 
 // This is a sample function to fetch product data
 // In a real app, you would fetch from your database or API
 async function getProductById(id) {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 1000))
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   // Sample product data
   const products = [
+    // refrence: Women Mesh Magnetic Buckle Starry Sky Luxury Fashion Watch with Magnetic Strip for College/Office
+   {
+  id: 30,
+  name: "Luxury Starry Sky Women's Watch – Magnetic Elegance for Every Day",
+  price: 600,
+  originalPrice: 999,
+  rating: 4.9,
+  image: watch002,
+  hoverImage: "https://img.drz.lazcdn.com/static/pk/p/aeaafa80c9e26fbc4d4c2350495097d3.jpg_720x720q80.jpg_.webp",
+  description: `🌟 Shine Like the Stars 🌟
+  Introducing the Starry Sky Luxury Watch – Where elegance meets everyday glam.
+
+  ✨ Featuring:
+  - Dazzling black galaxy dial with crystal hour markers
+  - Chic rose gold magnetic mesh strap
+  - Lightweight and comfortable magnetic buckle
+  - Ideal for college, casual outings, or office elegance
+
+  👩‍🎓💼 Whether you're slaying in class or owning the boardroom – this watch is your ultimate fashion companion.
+
+  💖 Wear the sparkle. Own the style.`,
+  images: [
+    watch01,
+    watch002,
+    watch02,
+    watch03,
+    watch04,
+    "https://img.drz.lazcdn.com/static/pk/p/cbadce40e2709cdcc3a5c65cd74b6834.jpg_720x720q80.jpg_.webp",
+    "https://img.drz.lazcdn.com/static/pk/p/aeaafa80c9e26fbc4d4c2350495097d3.jpg_720x720q80.jpg_.webp",
+    "https://img.drz.lazcdn.com/static/pk/p/51e5bbb10885ff7ac01ff0d34ac81d04.jpg_720x720q80.jpg_.webp",
+    "https://img.drz.lazcdn.com/static/pk/p/dddd69896e1416b50069c57085d3e5ca.jpg_720x720q80.jpg_.webp",
+    "https://img.drz.lazcdn.com/static/pk/p/879c541c0e01e36765e421203b1e6da3.jpg_720x720q80.jpg_.webp"
+  ],
+  stock: 25,
+  sku: "WATCH-STARRY-ROSEGOLD-001",
+  brand: "StarGlam",
+  category: "Accessories",
+  tags: [
+    "women's watch",
+    "magnetic watch",
+    "rose gold watch",
+    "starry dial",
+    "luxury watch",
+    "gift for her"
+  ],
+  features: [
+    "Black starry galaxy dial with crystal markers",
+    "Elegant rose gold mesh strap",
+    "Magnetic clasp for perfect fit",
+    "Lightweight and skin-friendly",
+    "Suitable for daily or formal wear",
+    "Premium packaging – ideal gift choice"
+  ],
+  specifications: [
+    { name: "Brand", value: "StarGlam" },
+    { name: "Strap Material", value: "Stainless Steel Mesh" },
+    { name: "Dial Shape", value: "Round" },
+    { name: "Display Type", value: "Analog" },
+    { name: "Strap Color", value: "Rose Gold" },
+    { name: "Dial Color", value: "Black Starry Sky" },
+    { name: "Water Resistance", value: "Splash Resistant" },
+    { name: "Closure", value: "Magnetic Clasp" },
+    { name: "Movement", value: "Quartz" },
+    { name: "Country of Origin", value: "China" }
+  ],
+  reviews: [
     {
-      "id": 24,
-      "name": "2Pc Stitched Unique Dress for Girls - Trendy, Comfortable, Easy to Wear",
-      "price": 1999,
-      "originalPrice": 2399,
-      "rating": 4.7,
-      image: "https://img.drz.lazcdn.com/static/pk/p/20161591d66ea7c1e591e0ee2abee96c.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/6dd54bb6ed755843ec97774054e983cc.jpg_720x720q80.jpg_.webp",
-      "description": "Trendy and vibrant 2Pc stitched dress set for girls. This outfit includes a plain red long top paired with stylish black floral printed trousers. Made with breathable fabric, it's perfect for casual outings, daily wear, or festive occasions. The bold red top and eye-catching floral bottoms make it a standout piece in your wardrobe.",
+      id: 1,
+      user: "Hania A.",
+      avatar: "/placeholder.svg?height=40&width=40",
+      rating: 5,
+      date: "4 days ago",
+      title: "Stunning & Classy!",
+      comment:
+        "Absolutely loved the glittery dial and rose gold strap. Looks so premium on the wrist!",
+      helpful: 10,
+      images: []
+    },
+    {
+      id: 2,
+      user: "Noor F.",
+      avatar: "/placeholder.svg?height=40&width=40",
+      rating: 4,
+      date: "1 week ago",
+      title: "Elegant Look",
+      comment:
+        "Very elegant and fits comfortably thanks to the magnetic strap. Perfect for daily use.",
+      helpful: 6,
+      images: []
+    }
+  ]
+}
+,
+    {
+      id: 24,
+      name: "2Pc Stitched Unique Dress for Girls - Trendy, Comfortable, Easy to Wear",
+      price: 1999,
+      originalPrice: 2399,
+      rating: 4.7,
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/20161591d66ea7c1e591e0ee2abee96c.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/6dd54bb6ed755843ec97774054e983cc.jpg_720x720q80.jpg_.webp",
+      description:
+        "Trendy and vibrant 2Pc stitched dress set for girls. This outfit includes a plain red long top paired with stylish black floral printed trousers. Made with breathable fabric, it's perfect for casual outings, daily wear, or festive occasions. The bold red top and eye-catching floral bottoms make it a standout piece in your wardrobe.",
       images: [
         "https://img.drz.lazcdn.com/static/pk/p/20161591d66ea7c1e591e0ee2abee96c.jpg_720x720q80.jpg_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/c0c4288daab729d4f4e27dae2e48a5ee.jpg_720x720q80.jpg_.webp",
@@ -36,64 +138,74 @@ async function getProductById(id) {
         "https://img.drz.lazcdn.com/static/pk/p/33ae39844545d056f9df240271599bc2.jpg_120x120q80.jpg_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/ada04d28d257dcdd7007ca9b325a595c.jpg_720x720q80.jpg_.webp",
       ],
-      "stock": 25,
-      "sku": "DRESS-RED-FLORAL-025",
-      "brand": "StyleZone",
-      "category": "Clothing",
-      "tags": ["girls dress", "stitched suit", "2Pc dress", "floral trousers", "trendy outfit"],
-      "features": [
+      stock: 25,
+      sku: "DRESS-RED-FLORAL-025",
+      brand: "StyleZone",
+      category: "Clothing",
+      tags: [
+        "girls dress",
+        "stitched suit",
+        "2Pc dress",
+        "floral trousers",
+        "trendy outfit",
+      ],
+      features: [
         "Breathable cotton blend fabric",
         "Elegant red long top",
         "Vibrant floral printed trousers",
         "Elastic waist for easy fit",
         "Perfect for casual and festive wear",
-        "Easy to wash and maintain"
+        "Easy to wash and maintain",
       ],
-      "specifications": [
-        { "name": "Brand", "value": "StyleZone" },
-        { "name": "Material", "value": "Cotton Blend" },
-        { "name": "Size Range", "value": "S, M, L, XL" },
-        { "name": "Gender", "value": "Girls" },
-        { "name": "Style", "value": "Casual / Ethnic Fusion" },
-        { "name": "Number of Items", "value": "2 (Top and Bottom)" },
-        { "name": "Color", "value": "Red & Multicolor" },
-        { "name": "Pattern", "value": "Solid & Floral Print" },
-        { "name": "Care Instructions", "value": "Machine Wash Cold" },
-        { "name": "Country of Origin", "value": "Pakistan" }
+      specifications: [
+        { name: "Brand", value: "StyleZone" },
+        { name: "Material", value: "Cotton Blend" },
+        { name: "Size Range", value: "S, M, L, XL" },
+        { name: "Gender", value: "Girls" },
+        { name: "Style", value: "Casual / Ethnic Fusion" },
+        { name: "Number of Items", value: "2 (Top and Bottom)" },
+        { name: "Color", value: "Red & Multicolor" },
+        { name: "Pattern", value: "Solid & Floral Print" },
+        { name: "Care Instructions", value: "Machine Wash Cold" },
+        { name: "Country of Origin", value: "Pakistan" },
       ],
-      "reviews": [
+      reviews: [
         {
-          "id": 1,
-          "user": "Hania A.",
-          "avatar": "/placeholder.svg?height=40&width=40",
-          "rating": 5,
-          "date": "4 days ago",
-          "title": "Beautiful and unique!",
-          "comment": "The colors are super vibrant, and the floral design on the trousers really stands out. Got lots of compliments wearing this!",
-          "helpful": 10,
-          "images": []
+          id: 1,
+          user: "Hania A.",
+          avatar: "/placeholder.svg?height=40&width=40",
+          rating: 5,
+          date: "4 days ago",
+          title: "Beautiful and unique!",
+          comment:
+            "The colors are super vibrant, and the floral design on the trousers really stands out. Got lots of compliments wearing this!",
+          helpful: 10,
+          images: [],
         },
         {
-          "id": 2,
-          "user": "Noor F.",
-          "avatar": "/placeholder.svg?height=40&width=40",
-          "rating": 4,
-          "date": "1 week ago",
-          "title": "Nice for casual wear",
-          "comment": "Good fabric quality. The red top is simple and elegant, while the pants are more stylish. Loved the combo.",
-          "helpful": 6,
-          "images": []
-        }
-      ]
-    },  
+          id: 2,
+          user: "Noor F.",
+          avatar: "/placeholder.svg?height=40&width=40",
+          rating: 4,
+          date: "1 week ago",
+          title: "Nice for casual wear",
+          comment:
+            "Good fabric quality. The red top is simple and elegant, while the pants are more stylish. Loved the combo.",
+          helpful: 6,
+          images: [],
+        },
+      ],
+    },
     {
       id: 2,
       name: "Queen Printed Pink Color Lounge Wear Nightwear Sleepwear",
       price: 1360,
       originalPrice: 1499,
       rating: 4.6,
-      image: "https://img.drz.lazcdn.com/static/pk/p/65c2b80bf14e5fa429e03ebf80d722ba.jpg_400x400q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/5804ca79b1763226ce0260865e9bb9cd.jpg_720x720q80.jpg_.webp",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/65c2b80bf14e5fa429e03ebf80d722ba.jpg_400x400q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/5804ca79b1763226ce0260865e9bb9cd.jpg_720x720q80.jpg_.webp",
       description:
         "Cozy Women's Lounge Wear with Heart-Printed Trousers. This comfortable sleepwear set includes a stylish top and heart-printed pants. Made with soft, breathable fabric for a restful night's sleep. The elastic waistband ensures comfort, while the cute design adds a touch of charm to your nightwear collection. Perfect for lounging around the house or getting a good night's sleep.",
       images: [
@@ -138,7 +250,9 @@ async function getProductById(id) {
           comment:
             "I absolutely love this loungewear set! The fabric is so soft against the skin and the heart print is adorable. The fit is perfect - not too tight but still flattering. I've washed it several times and it still looks brand new.",
           helpful: 15,
-          images: ["https://img.drz.lazcdn.com/static/pk/p/65c2b80bf14e5fa429e03ebf80d722ba.jpg_400x400q80.jpg_.webp"],
+          images: [
+            "https://img.drz.lazcdn.com/static/pk/p/65c2b80bf14e5fa429e03ebf80d722ba.jpg_400x400q80.jpg_.webp",
+          ],
         },
         {
           id: 2,
@@ -172,9 +286,12 @@ async function getProductById(id) {
       price: 1345,
       originalPrice: 1650,
       rating: 4.9,
-      image: "https://img.drz.lazcdn.com/static/pk/p/db38fdcc53b7892dcdb2bd4c74d787f9.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/b669ad9f6eac1fbcb91c1cb5a1d71e2a.jpg_720x720q80.jpg_.webp",
-      description: "Product details of Premium Laptop Backpack B210 – 16-Inch, Lightweight & Water-Repellent",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/db38fdcc53b7892dcdb2bd4c74d787f9.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/b669ad9f6eac1fbcb91c1cb5a1d71e2a.jpg_720x720q80.jpg_.webp",
+      description:
+        "Product details of Premium Laptop Backpack B210 – 16-Inch, Lightweight & Water-Repellent",
       images: [
         "https://img.drz.lazcdn.com/static/pk/p/db38fdcc53b7892dcdb2bd4c74d787f9.jpg_720x720q80.jpg_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/b669ad9f6eac1fbcb91c1cb5a1d71e2a.jpg_720x720q80.jpg_.webp",
@@ -243,8 +360,10 @@ async function getProductById(id) {
       price: 1350,
       originalPrice: 1450,
       rating: 5.0,
-      image: "https://img.drz.lazcdn.com/static/pk/p/e550a04eb5e7be012be302910dd3f131.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/c4a5ec30f2158d9cbc8bcf6b61949ac0.jpg_720x720q80.jpg_.webp",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/e550a04eb5e7be012be302910dd3f131.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/c4a5ec30f2158d9cbc8bcf6b61949ac0.jpg_720x720q80.jpg_.webp",
       description:
         "Product details of Waterproof Fanny Pack Waist Belt Bag Purse Outdoor Sport Running Camping Waist pack",
       images: [
@@ -315,9 +434,12 @@ async function getProductById(id) {
       price: 1999,
       originalPrice: 2365,
       rating: 4.9,
-      image: "https://img.drz.lazcdn.com/static/pk/p/e9901bff069f91e5e2cf26d10c166bd2.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/1ac390f1dc83c5f34a6f2b2cf3166727.jpg_720x720q80.jpg_.webp",
-      description: "7-in-1 Smart Watch: Your Ultimate Wearable Companion Experience the Future of Smart Watches",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/e9901bff069f91e5e2cf26d10c166bd2.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/1ac390f1dc83c5f34a6f2b2cf3166727.jpg_720x720q80.jpg_.webp",
+      description:
+        "7-in-1 Smart Watch: Your Ultimate Wearable Companion Experience the Future of Smart Watches",
       images: [
         "https://img.drz.lazcdn.com/static/pk/p/e9901bff069f91e5e2cf26d10c166bd2.jpg_720x720q80.jpg_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/1ac390f1dc83c5f34a6f2b2cf3166727.jpg_720x720q80.jpg_.webp",
@@ -388,21 +510,23 @@ async function getProductById(id) {
       price: 699,
       originalPrice: 899,
       rating: 4.6,
-      image: "https://img.drz.lazcdn.com/static/pk/p/12fb392c98ac9dd27d7117520f9728ad.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/c0b003fab3f92db611935fce72b01ed2.jpg_720x720q80.jpg_.webp",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/12fb392c98ac9dd27d7117520f9728ad.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/c0b003fab3f92db611935fce72b01ed2.jpg_720x720q80.jpg_.webp",
       description:
         "Product details of Water Bottles, Glass/Plastic 400 ML Water bottles, Sports water bottles Double walled",
-        images: [
-          "https://img.drz.lazcdn.com/static/pk/p/2f0fab5cf2baabc839fcd4586ca46dd0.jpg_720x720q80.jpg_.webp",
-          bottle1,
-          bottle2,
-          "https://img.drz.lazcdn.com/static/pk/p/dc0419b1be81241041dfd837f4c00927.jpg_720x720q80.jpg_.webp",
-          "https://img.drz.lazcdn.com/static/pk/p/70fb98623146dfbde8fb4cf3bb90617a.jpg_720x720q80.jpg_.webp",
-          "https://img.drz.lazcdn.com/static/pk/p/72b18b330e2f94f11f0c44f0aec5f667.jpg_720x720q80.jpg_.webp",
-          "https://img.drz.lazcdn.com/static/pk/p/f16ecac7ed079a5893b24ba06fb425c1.jpg_720x720q80.jpg_.webp",
-          "https://img.drz.lazcdn.com/static/pk/p/025e6b91247cc4859475c23f55f7b319.jpg_720x720q80.jpg_.webp",
-          "https://img.drz.lazcdn.com/static/pk/p/f5084d4671793decf71994abcccfc59e.jpg_720x720q80.jpg_.webp",
-        ],
+      images: [
+        "https://img.drz.lazcdn.com/static/pk/p/2f0fab5cf2baabc839fcd4586ca46dd0.jpg_720x720q80.jpg_.webp",
+        bottle1,
+        bottle2,
+        "https://img.drz.lazcdn.com/static/pk/p/dc0419b1be81241041dfd837f4c00927.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/70fb98623146dfbde8fb4cf3bb90617a.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/72b18b330e2f94f11f0c44f0aec5f667.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/f16ecac7ed079a5893b24ba06fb425c1.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/025e6b91247cc4859475c23f55f7b319.jpg_720x720q80.jpg_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/f5084d4671793decf71994abcccfc59e.jpg_720x720q80.jpg_.webp",
+      ],
       stock: 50,
       sku: "BOTTLE-400ML",
       brand: "EcoBottle",
@@ -467,9 +591,12 @@ async function getProductById(id) {
       price: 499,
       originalPrice: 650,
       rating: 4.9,
-      image: "https://img.drz.lazcdn.com/static/pk/p/2f0fab5cf2baabc839fcd4586ca46dd0.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/f5084d4671793decf71994abcccfc59e.jpg_720x720q80.jpg_.webp",
-      description: "Product details of Stylish 400ml Glass Water Bottle for Girls & Boys - Insulated Leakproof Design",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/2f0fab5cf2baabc839fcd4586ca46dd0.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/f5084d4671793decf71994abcccfc59e.jpg_720x720q80.jpg_.webp",
+      description:
+        "Product details of Stylish 400ml Glass Water Bottle for Girls & Boys - Insulated Leakproof Design",
       images: [
         "https://img.drz.lazcdn.com/static/pk/p/2f0fab5cf2baabc839fcd4586ca46dd0.jpg_720x720q80.jpg_.webp",
         bottle1,
@@ -547,7 +674,8 @@ async function getProductById(id) {
       originalPrice: 2299,
       rating: 5.0,
       image: bag1,
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
       description:
         "PRODUCT DETAILS Structure: This Stylish Bag having Moderate capacity that can hold your books, purses, and lots of other things comfortably.",
       images: [
@@ -625,9 +753,12 @@ async function getProductById(id) {
       price: 620,
       originalPrice: 850,
       rating: 4.9,
-      image: "https://img.drz.lazcdn.com/static/pk/p/03694657ce3560c31c3fc78adb303ada.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/85e2cb8c83d41b809f5d4ae2ef60bcc8.jpg_720x720q80.jpg_.webp",
-      description: "The multifunctional live broadcast support is a good helper for live broadcast and TV watching.",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/03694657ce3560c31c3fc78adb303ada.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/85e2cb8c83d41b809f5d4ae2ef60bcc8.jpg_720x720q80.jpg_.webp",
+      description:
+        "The multifunctional live broadcast support is a good helper for live broadcast and TV watching.",
       images: [
         "https://img.drz.lazcdn.com/static/pk/p/03694657ce3560c31c3fc78adb303ada.jpg_720x720q80.jpg_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/85e2cb8c83d41b809f5d4ae2ef60bcc8.jpg_720x720q80.jpg_.webp",
@@ -696,8 +827,10 @@ async function getProductById(id) {
       price: 2099,
       originalPrice: 2399,
       rating: 5.0,
-      image: "https://img.drz.lazcdn.com/static/pk/p/727e1bfad2d99871c26695cf700b8a4c.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/e9ba9a80f72ea7e7fb03f3ff5d246c5b.jpg_720x720q80.jpg_.webp",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/727e1bfad2d99871c26695cf700b8a4c.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/e9ba9a80f72ea7e7fb03f3ff5d246c5b.jpg_720x720q80.jpg_.webp",
       description:
         "Product details of Musk Al Mahal - Black And Silver Original Attar For Men - 12ml Pakistan's No.#1 Attar Brand Affordable Pricing",
       images: [
@@ -734,7 +867,9 @@ async function getProductById(id) {
           comment:
             "Mein ne ye attar pehli baar try kiya hai aur wakai bohat acha hai. Khusboo bohat unique hai aur poora din rehti hai. Quantity kam hai lekin thora sa lagane se kaam chal jata hai. Packaging bhi premium hai. Zaroor try karein.",
           helpful: 24,
-          images: ["https://img.drz.lazcdn.com/static/pk/p/727e1bfad2d99871c26695cf700b8a4c.jpg_720x720q80.jpg_.webp"],
+          images: [
+            "https://img.drz.lazcdn.com/static/pk/p/727e1bfad2d99871c26695cf700b8a4c.jpg_720x720q80.jpg_.webp",
+          ],
         },
         {
           id: 2,
@@ -768,9 +903,12 @@ async function getProductById(id) {
       price: 1850,
       originalPrice: 2350,
       rating: 5,
-      image: "https://img.drz.lazcdn.com/static/pk/p/f65408f5ab3da5042e39b6cb570d8e10.png_720x720q80.png_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/f3e1823df660842d398e1f4389a0e329.png_720x720q80.png_.webp",
-      description: "The Legend | Finest Classical - Modern Combo Perfume | Scents N Stories | 50ml",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/f65408f5ab3da5042e39b6cb570d8e10.png_720x720q80.png_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/f3e1823df660842d398e1f4389a0e329.png_720x720q80.png_.webp",
+      description:
+        "The Legend | Finest Classical - Modern Combo Perfume | Scents N Stories | 50ml",
       images: [
         "https://img.drz.lazcdn.com/static/pk/p/f65408f5ab3da5042e39b6cb570d8e10.png_720x720q80.png_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/f3e1823df660842d398e1f4389a0e329.png_720x720q80.png_.webp",
@@ -839,9 +977,12 @@ async function getProductById(id) {
       price: 650,
       originalPrice: 999,
       rating: 5.0,
-      image: "https://img.drz.lazcdn.com/static/pk/p/811006b7477e95801e732c00ac93d2f8.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/f1e107a3b8164883718c2b3d05a2c882.jpg_720x720q80.jpg_.webp",
-      description: "Are you tired of struggling with cluttered, bulky wallets that cramp your style?",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/811006b7477e95801e732c00ac93d2f8.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/f1e107a3b8164883718c2b3d05a2c882.jpg_720x720q80.jpg_.webp",
+      description:
+        "Are you tired of struggling with cluttered, bulky wallets that cramp your style?",
       images: [
         "https://img.drz.lazcdn.com/static/pk/p/811006b7477e95801e732c00ac93d2f8.jpg_720x720q80.jpg_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/f1e107a3b8164883718c2b3d05a2c882.jpg_720x720q80.jpg_.webp",
@@ -911,8 +1052,10 @@ async function getProductById(id) {
       price: 1999,
       originalPrice: 2365,
       rating: 4.9,
-      image: "https://img.drz.lazcdn.com/static/pk/p/9cab0addfff3ffd0065dbf210d85a919.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/2118a48d4b8b0e2fd0aefcaa1f14d201.jpg_720x720q80.jpg_.webp",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/9cab0addfff3ffd0065dbf210d85a919.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/2118a48d4b8b0e2fd0aefcaa1f14d201.jpg_720x720q80.jpg_.webp",
       description:
         "Product details of Impression of Black Car Perfume For Men 100 ml CAR PERFUME FOR MEN 100ML, 100% Original BEST PERFUME FOR MEN",
       images: [
@@ -985,10 +1128,15 @@ async function getProductById(id) {
       price: 750,
       originalPrice: 799,
       rating: 4.9,
-      image: "https://img.drz.lazcdn.com/static/pk/p/cc39782c733f04410bc22cabf70f06ad.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/cc39782c733f04410bc22cabf70f06ad.jpg_720x720q80.jpg_.webp",
-      description: "Product details of Florse | Our Best Floral Fragrance | Pocket Perfume | 5ml 15 Days Easy Returns",
-      images: ["https://img.drz.lazcdn.com/static/pk/p/cc39782c733f04410bc22cabf70f06ad.jpg_720x720q80.jpg_.webp"],
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/cc39782c733f04410bc22cabf70f06ad.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/cc39782c733f04410bc22cabf70f06ad.jpg_720x720q80.jpg_.webp",
+      description:
+        "Product details of Florse | Our Best Floral Fragrance | Pocket Perfume | 5ml 15 Days Easy Returns",
+      images: [
+        "https://img.drz.lazcdn.com/static/pk/p/cc39782c733f04410bc22cabf70f06ad.jpg_720x720q80.jpg_.webp",
+      ],
       stock: 40,
       sku: "PERFUME-FLORSE-5ML",
       brand: "Florse",
@@ -1054,9 +1202,12 @@ async function getProductById(id) {
       price: 6199,
       originalPrice: 6999,
       rating: 4.9,
-      image: "https://img.drz.lazcdn.com/static/pk/p/e50bdf271c6c095f35d9c54fba007ed0.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/fe1e9fb7b1aed14167a2279f05fa1775.jpg_720x720q80.jpg_.webp",
-      description: "The Title says it all. 9 pm edp can be found for as low as 16€. Doesn't smell synthetic at all.",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/e50bdf271c6c095f35d9c54fba007ed0.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/fe1e9fb7b1aed14167a2279f05fa1775.jpg_720x720q80.jpg_.webp",
+      description:
+        "The Title says it all. 9 pm edp can be found for as low as 16€. Doesn't smell synthetic at all.",
       images: [
         "https://img.drz.lazcdn.com/static/pk/p/e50bdf271c6c095f35d9c54fba007ed0.jpg_720x720q80.jpg_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/fe1e9fb7b1aed14167a2279f05fa1775.jpg_720x720q80.jpg_.webp",
@@ -1126,9 +1277,12 @@ async function getProductById(id) {
       price: 1199,
       originalPrice: 1399,
       rating: 5.0,
-      image: "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
-      hoverImage: "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
-      description: "Top 5 Sample | For Men | Pocket Perfume These are our all-time top-rated fragrance samples",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
+      description:
+        "Top 5 Sample | For Men | Pocket Perfume These are our all-time top-rated fragrance samples",
       images: [
         "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
@@ -1356,7 +1510,8 @@ async function getProductById(id) {
         "https://img.kwcdn.com/product/fancy/b1047f82-ccd9-417a-b56b-4c4bd5aed773.jpg?imageView2/2/w/800/q/70/format/webp",
       hoverImage:
         "https://img.kwcdn.com/product/fancy/8c19207f-e350-48ba-b01b-2979149da422.jpg?imageView2/2/w/800/q/70/format/webp",
-      description: "Plating: No Plating Mosaic Material: Glass Main Material: Alloy Type: Single Ring Style: Glam",
+      description:
+        "Plating: No Plating Mosaic Material: Glass Main Material: Alloy Type: Single Ring Style: Glam",
       images: [
         "https://img.kwcdn.com/product/fancy/b1047f82-ccd9-417a-b56b-4c4bd5aed773.jpg?imageView2/2/w/800/q/70/format/webp",
         "https://img.kwcdn.com/product/fancy/8c19207f-e350-48ba-b01b-2979149da422.jpg?imageView2/2/w/800/q/70/format/webp",
@@ -1648,16 +1803,16 @@ async function getProductById(id) {
         },
       ],
     },
-  ]
+  ];
 
-  const product = products.find((p) => p.id === Number.parseInt(id))
-  return product || null
+  const product = products.find((p) => p.id === Number.parseInt(id));
+  return product || null;
 }
 
 // Function to get related products
 async function getRelatedProducts(category, currentId) {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 800))
+  await new Promise((resolve) => setTimeout(resolve, 800));
 
   // Sample related products data
   const allProducts = [
@@ -1667,7 +1822,8 @@ async function getRelatedProducts(category, currentId) {
       price: 1999,
       originalPrice: 2365,
       rating: 4.9,
-      image: "https://img.drz.lazcdn.com/static/pk/p/9cab0addfff3ffd0065dbf210d85a919.jpg_720x720q80.jpg_.webp",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/9cab0addfff3ffd0065dbf210d85a919.jpg_720x720q80.jpg_.webp",
     },
     {
       id: 14,
@@ -1675,7 +1831,8 @@ async function getRelatedProducts(category, currentId) {
       price: 750,
       originalPrice: 799,
       rating: 4.9,
-      image: "https://img.drz.lazcdn.com/static/pk/p/cc39782c733f04410bc22cabf70f06ad.jpg_720x720q80.jpg_.webp",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/cc39782c733f04410bc22cabf70f06ad.jpg_720x720q80.jpg_.webp",
     },
     {
       id: 15,
@@ -1683,7 +1840,8 @@ async function getRelatedProducts(category, currentId) {
       price: 6199,
       originalPrice: 6999,
       rating: 4.9,
-      image: "https://img.drz.lazcdn.com/static/pk/p/e50bdf271c6c095f35d9c54fba007ed0.jpg_720x720q80.jpg_.webp",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/e50bdf271c6c095f35d9c54fba007ed0.jpg_720x720q80.jpg_.webp",
     },
     {
       id: 16,
@@ -1691,18 +1849,19 @@ async function getRelatedProducts(category, currentId) {
       price: 1199,
       originalPrice: 1399,
       rating: 5.0,
-      image: "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+      image:
+        "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
     },
-  ]
+  ];
 
   // Filter out the current product and return products in the same category
-  return allProducts.filter((p) => p.id !== currentId)
+  return allProducts.filter((p) => p.id !== currentId);
 }
 
 // Function to get reviews for a product
 async function getProductReviews(productId) {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 600))
+  await new Promise((resolve) => setTimeout(resolve, 600));
 
   // Sample reviews data
   const reviews = [
@@ -1717,7 +1876,9 @@ async function getProductReviews(productId) {
       comment:
         "I've been using this attar for a month now and I'm very impressed with the quality. The scent lasts all day and I've received many compliments. Will definitely buy again!",
       helpful: 24,
-      images: ["https://img.drz.lazcdn.com/static/pk/p/727e1bfad2d99871c26695cf700b8a4c.jpg_720x720q80.jpg_.webp"],
+      images: [
+        "https://img.drz.lazcdn.com/static/pk/p/727e1bfad2d99871c26695cf700b8a4c.jpg_720x720q80.jpg_.webp",
+      ],
     },
     {
       id: 2,
@@ -1741,20 +1902,23 @@ async function getProductReviews(productId) {
         "The fragrance is good but I expected it to last longer. Still, it's a good product for the price and I would recommend it to others.",
       helpful: 7,
     },
-  ]
+  ];
 
-  return reviews
+  return reviews;
 }
 export default async function ProductPage({ params }) {
-  const product = await getProductById(params.id)
+  const product = await getProductById(params.id);
 
   // If product not found, show 404 page
   if (!product) {
-    notFound()
+    notFound();
   }
 
   // Fetch related products
-  const relatedProductsPromise = getRelatedProducts(product.category, product.id)
+  const relatedProductsPromise = getRelatedProducts(
+    product.category,
+    product.id
+  );
 
   return (
     <Suspense fallback={<ProductDetailSkeleton />}>
@@ -1764,6 +1928,5 @@ export default async function ProductPage({ params }) {
         reviewsPromise={getProductReviews(product.id)}
       />
     </Suspense>
-  )
+  );
 }
-

@@ -184,7 +184,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <Image src={mainImage || "/placeholder.svg"} alt={product?.name} fill className="object-cover border-none" />
+                  <Image src={mainImage || "/placeholder.svg"} alt={product?.name} fill className="object-contain border-none" />
 
                   {discount && (
                     <div className="absolute top-4 left-4">

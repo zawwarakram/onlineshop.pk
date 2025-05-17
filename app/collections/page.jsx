@@ -6,6 +6,7 @@ import Link from "next/link"
 import bag1 from "../assets/bag1.png"
 import bag3 from "../assets/bag3.png"
 import watch002 from "../assets/watch002.png"
+import myshoes01 from "../assets/myshoes01.png"
 // Sample product data
 const productData = [
   {
@@ -38,6 +39,20 @@ const productData = [
       bag1,
     hoverImage:
       "https://img.drz.lazcdn.com/static/pk/p/d301738b58934c8b990b9410491a25b4.jpg_720x720q80.jpg_.webp",
+    description:
+      "PRODUCT DETAILS Structure: This Stylish Bag having Moderate capacity that can hold your books, purses, and lots of other things comfortably.",
+  },
+  ,{
+    id: 1028,
+    name: "Handbag for girls - Leather Bag for women - Shoulder bags for ladies - casual handbag - Phone pouch - Crossbody & Shoulder bag - Purse for girls",
+    price: 1599,
+    originalPrice: 2299,
+    rating: 5.0,
+    image:
+      // "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+      myshoes01,
+    hoverImage:
+      myshoes01,
     description:
       "PRODUCT DETAILS Structure: This Stylish Bag having Moderate capacity that can hold your books, purses, and lots of other things comfortably.",
   },

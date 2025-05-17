@@ -6,6 +6,9 @@ import Link from "next/link";
 import bag1 from "../../assets/bag1.png";
 import bag3 from "../../assets/bag3.png";
 import watch002 from "../../assets/watch002.png";
+import myshoes01 from "../../assets/myshoes01.png"
+import myshoes1 from "../../assets/myshoes1.png"
+
 export default function TrendingProducts() {
   const [hoveredProduct, setHoveredProduct] = useState(null);
 
@@ -322,6 +325,37 @@ export default function TrendingProducts() {
 - This product is highly recommended by many customers around the globe.
 - No any side effects have been registered yet.
 - This product has most of the positive reviews on international e-commerce sites like amazon or aliexpress.`,
+  }, ,{
+    id: 1028,
+    name: "🧨 LIMITED TIME DEAL – Trendy Sneakers at JUST Rs. 1999! 💥 Fresh Drop Alert – Premium Kicks for Rs. 1999 ONLY!",
+    price: 1999,
+    originalPrice: 2299,
+    rating: 5.0,
+    image:
+      // "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+      myshoes01,
+    hoverImage:
+      myshoes1,
+    description:
+      `
+
+🔥 LIMITED EDITION STREETWEAR SNEAKERS – JUST Rs. 1999! 🔥
+
+Turn heads with every step! These bold, stylish sneakers are crafted for trendsetters who dare to stand out.
+Made with premium comfort soles, sleek design, and a street-style vibe that screams confidence.
+
+✨ Why You’ll Love Them:
+✔️ Iconic look with next-level comfort
+✔️ Lightweight & breathable – perfect for all-day wear
+✔️ Pairs with jeans, joggers, or ANY outfit
+✔️ Unbeatable price – only Rs. 1999!
+
+💥 Steal the spotlight. Own your vibe. Walk like you mean it. 💥
+
+🛒 Order Now | 🚚 Fast Delivery | 📦 Stylish Packaging
+⚠️ Selling Out Fast – Don’t Miss Out!
+
+`,
   },  {
     id: 8,
     name: "Handbag for girls - Leather Bag for women - Shoulder bags for ladies - casual handbag - Phone pouch - Crossbody & Shoulder bag - Purse for girls",
@@ -682,7 +716,7 @@ Style: Glam`,
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-4">
           {products?.map((product,index) => (
             <a href={`/product/${product.id}`}>
             <div
@@ -692,7 +726,7 @@ Style: Glam`,
               onMouseLeave={() => setHoveredProduct(null)}
             >
               {/* Product Image */}
-              <div className="relative h-64 md:h-70 overflow-hidden">
+              <div className="relative h-64 md:h-78 overflow-hidden">
                 <Image
                   src={
                     hoveredProduct === product.id
@@ -701,7 +735,7 @@ Style: Glam`,
                   }
                   alt={product.name}
                   fill
-                  className="object-contain transition-all duration-500 group-hover:scale-105"
+                  className="object-cover transition-all duration-500 group-hover:scale-105"
                 />
 
                 {/* Sale badge */}

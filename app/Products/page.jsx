@@ -7,6 +7,8 @@ import { Star, Heart } from "lucide-react";
 import bag1 from "../assets/bag1.png";
 import bag3 from "../assets/bag3.png";
 import watch002 from "../assets/watch002.png";
+import myshoes01 from "../assets/myshoes01.png"
+import myshoes1 from "../assets/myshoes1.png"
 // Import the product data
 const products = [
  {
@@ -39,6 +41,51 @@ const products = [
     description:
       "PRODUCT DETAILS Structure: This Stylish Bag having Moderate capacity that can hold your books, purses, and lots of other things comfortably.",
   },
+  , {
+    id:1028,
+    name: "🧨 LIMITED TIME DEAL – Trendy Sneakers at JUST Rs. 1999! 💥 Fresh Drop Alert – Premium Kicks for Rs. 1999 ONLY!",
+    price: 1999,
+    originalPrice: 2299,
+    rating: 5.0,
+    image:
+myshoes01,
+    hoverImage:
+myshoes1,
+    description:
+      "PRODUCT DETAILS Structure: This Stylish Bag having Moderate capacity that can hold your books, purses, and lots of other things comfortably.",
+  },
+//    ,{
+//     id: 1028,
+//     name: "🧨 LIMITED TIME DEAL – Trendy Sneakers at JUST Rs. 1999! 💥 Fresh Drop Alert – Premium Kicks for Rs. 1999 ONLY!",
+//     price: 1999,
+//     originalPrice: 2299,
+//     rating: 5.0,
+//     image:
+//       // "https://img.drz.lazcdn.com/static/pk/p/f56a56534f99ec01ce4e09aca29985fd.jpg_720x720q80.jpg_.webp",
+//       myshoes01,
+//     hoverImage:
+//       myshoes1,
+//     description:
+//       `
+
+// 🔥 LIMITED EDITION STREETWEAR SNEAKERS – JUST Rs. 1999! 🔥
+
+// Turn heads with every step! These bold, stylish sneakers are crafted for trendsetters who dare to stand out.
+// Made with premium comfort soles, sleek design, and a street-style vibe that screams confidence.
+
+// ✨ Why You’ll Love Them:
+// ✔️ Iconic look with next-level comfort
+// ✔️ Lightweight & breathable – perfect for all-day wear
+// ✔️ Pairs with jeans, joggers, or ANY outfit
+// ✔️ Unbeatable price – only Rs. 1999!
+
+// 💥 Steal the spotlight. Own your vibe. Walk like you mean it. 💥
+
+// 🛒 Order Now | 🚚 Fast Delivery | 📦 Stylish Packaging
+// ⚠️ Selling Out Fast – Don’t Miss Out!
+
+// `,
+//   },
   {
     id: 24,
     name: "2Pc Stitched Unique Dress for Girls - Trendy, Comfortable, Easy to Wear",
@@ -499,7 +546,7 @@ export default function ProductsPage() {
     // Filter by price range
     result = result.filter(
       (product) =>
-        product.price >= priceRange[0] && product.price <= priceRange[1]
+        product?.price >= priceRange[0] && product?.price <= priceRange[1]
     );
 
     // Filter by search query
@@ -515,16 +562,16 @@ export default function ProductsPage() {
     // Sort products
     switch (sortOption) {
       case "price-low-high":
-        result.sort((a, b) => a.price - b.price);
+        result.sort((a, b) => a?.price - b?.price);
         break;
       case "price-high-low":
-        result.sort((a, b) => b.price - a.price);
+        result.sort((a, b) => b?.price - a?.price);
         break;
       case "newest":
-        result.sort((a, b) => b.id - a.id);
+        result.sort((a, b) => b?.id - a?.id);
         break;
       case "rating":
-        result.sort((a, b) => b.rating - a.rating);
+        result.sort((a, b) => b?.rating - a?.rating);
         break;
       default: // featured or any other case
         // Keep original order
@@ -990,7 +1037,7 @@ export default function ProductsPage() {
             )}
 
             {/* Product grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
               {currentProducts.map((product) => (
                 <div
                   key={product.id}
@@ -1022,13 +1069,13 @@ export default function ProductsPage() {
                       )}
                       {product.originalPrice &&
                         calculateDiscount(
-                          product.originalPrice,
-                          product.price
+                          product?.originalPrice,
+                          product?.price
                         ) > 10 && (
                           <span className="bg-amber-500 text-white text-xs font-bold px-3 py-1.5 rounded-full">
                             {calculateDiscount(
-                              product.originalPrice,
-                              product.price
+                              product?.originalPrice,
+                              product?.price
                             )}
                             % OFF
                           </span>
@@ -1091,17 +1138,17 @@ export default function ProductsPage() {
                         ))}
                       </div>
                       <span className="text-xs text-gray-500 ml-1">
-                        ({product.rating})
+                        ({product?.rating})
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
                       <div>
                         <span className="text-lg font-bold text-gray-900">
-                          Rs. {product.price.toFixed(0)}
+                          Rs. {product?.price.toFixed(0)}
                         </span>
                         {product.originalPrice && (
                           <span className="text-sm text-gray-500 line-through ml-2">
-                            Rs. {product.originalPrice.toFixed(0)}
+                            Rs. {product?.originalPrice.toFixed(0)}
                           </span>
                         )}
                       </div>
@@ -1226,7 +1273,7 @@ export default function ProductsPage() {
                         {product.name}
                       </h3>
                       <p className="text-sm font-bold text-gray-900">
-                        Rs. {product.price.toFixed(0)}
+                        Rs. {product?.price.toFixed(0)}
                       </p>
                     </div>
                   </div>

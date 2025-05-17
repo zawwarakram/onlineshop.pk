@@ -14,6 +14,16 @@ import watch04 from "../../assets/watch04.png";
 // import watch05 from "../../assets/watch05.png";
 import bottle1 from "../../assets/bottle1.png";
 import bottle2 from "../../assets/bottle2.png";
+import myshoes01 from "../../assets/myshoes01.png"
+import myshoes1 from "../../assets/myshoes1.png"
+import myshoes2 from "../../assets/myshoes2.png"
+import myshoes3 from "../../assets/myshoes3.png"
+import myshoes4 from "../../assets/myshos6.png"
+import myshoes5 from "../../assets/myshoes8.png"
+import myshoes6 from "../../assets/myshoes9.png"
+import myshoes7 from "../../assets/myshoes10.png"
+import myshoes8 from "../../assets/myshos11.png"
+
 // import  { Product, Review } from "@/types"
 
 // This is a sample function to fetch product data
@@ -1728,6 +1738,98 @@ async function getProductById(id) {
         },
       ],
     },
+    {
+  "id": 1028,
+  "name": " Ultra-Lightweight Breathable Running Shoes – Shock-Absorbing, Anti-Slip Sneakers for Gym, Jogging & Daily Wear",
+  "price": 1999,
+  "originalPrice": 2399,
+  "rating": 4.6,
+  "image": myshoes01,
+  "hoverImage": myshoes1,
+  "description": `🔥 LIMITED EDITION STREETWEAR SNEAKERS – JUST Rs. 1999! 🔥
+
+Turn heads with every step! These bold, stylish sneakers are crafted for trendsetters who dare to stand out.
+Made with premium comfort soles, sleek design, and a street-style vibe that screams confidence.
+
+✨ Why You’ll Love Them:
+✔️ Iconic look with next-level comfort
+✔️ Lightweight & breathable – perfect for all-day wear
+✔️ Pairs with jeans, joggers, or ANY outfit
+✔️ Unbeatable price – only Rs. 1999!
+
+💥 Steal the spotlight. Own your vibe. Walk like you mean it. 💥
+
+🛒 Order Now | 🚚 Fast Delivery | 📦 Stylish Packaging
+⚠️ Selling Out Fast – Don’t Miss Out!
+
+`,
+  "images": [
+ myshoes2,
+ myshoes3,
+ myshoes4,
+ myshoes5,
+ myshoes6,
+ myshoes7,
+ myshoes8,
+  ],
+  "stock": 50,
+  "sku": "SHOES-RUN-001",
+  "brand": "ActiveFeet",
+  "category": "Footwear",
+  "tags": ["shoes", "running", "sports", "breathable", "men"],
+  "features": [
+    "Lightweight and breathable mesh upper",
+    "Shock-absorbing cushioned sole",
+    "Anti-slip rubber outsole",
+    "Comfortable for all-day wear",
+    "Stylish design with lace-up closure",
+    "Ideal for running, walking, and gym use"
+  ],
+  "specifications": [
+    { "name": "Brand", "value": "ActiveFeet" },
+    { "name": "Material", "value": "Mesh and Rubber" },
+    { "name": "Closure Type", "value": "Lace-Up" },
+    { "name": "Occasion", "value": "Sports / Casual" },
+    { "name": "Gender", "value": "Men" },
+    { "name": "Sole Material", "value": "Rubber" }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "user": "Ali R.",
+      "avatar": "/placeholder.svg?height=40&width=40",
+      "rating": 5,
+      "date": "1 week ago",
+      "title": "Running ke liye best shoes!",
+      "comment": "Mein roz jogging karta hun aur ye shoes bohat comfortable hain. Insole soft hai aur grip bhi zabardast hai. Design bhi modern hai. Highly recommend!",
+      "helpful": 32,
+      "images": []
+    },
+    {
+      "id": 2,
+      "user": "Hamza Y.",
+      "avatar": "/placeholder.svg?height=40&width=40",
+      "rating": 4,
+      "date": "3 weeks ago",
+      "title": "Design aur fit acha hai",
+      "comment": "Shoes ka design stylish hai aur size perfectly fit aaya. Sirf sole thoda hard lagta hai shuru mein, lekin ek haftay baad adjust ho gaya.",
+      "helpful": 21,
+      "images": []
+    },
+    {
+      "id": 3,
+      "user": "Rehan M.",
+      "avatar": "/placeholder.svg?height=40&width=40",
+      "rating": 5,
+      "date": "2 months ago",
+      "title": "Value for money!",
+      "comment": "Is price range mein best shoes hain. Running aur gym dono ke liye use kar raha hun. Lightweight hain aur feet sweat nahi karte. Fit bhi tight nahi hota.",
+      "helpful": 26,
+      "images": []
+    }
+  ]
+},
+
     {
       id: 22,
       name: "Gemstone Rings Fashionable Popular Simple Hundred Matching Size Available Party, Birthday, Holiday Gift",

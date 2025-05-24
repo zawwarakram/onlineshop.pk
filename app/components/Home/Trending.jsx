@@ -310,7 +310,7 @@ export default function TrendingProducts() {
 
 
   const products = [
-{
+ {
     // product link:  Women Mesh Magnetic Buckle Starry Sky Luxury Fashion Watch with Magnetic Strip for College/Office
     id: 30231,
     name: "✨ Royal Heritage™ Gold Dial Watch with Classic Brown Leather Strap – Timeless Luxury for Men",
@@ -320,8 +320,8 @@ export default function TrendingProducts() {
     image: "https://img.drz.lazcdn.com/static/pk/p/5f7b7773ff5c47853880994b3949c012.jpg_720x720q80.jpg_.webp",
     hoverImage:
       // watch0004,
-      watch40,
-      
+      // watch40,
+      "https://img.drz.lazcdn.com/static/pk/p/23743f5e5efced6299793247b1708ab2.png_720x720q80.png_.webp",
     description: ` 👑 *Experience the Charm of Royalty\n\nTurn every moment into a statement of elegance with the *Royal Heritage™ Analog Watch. This masterpiece blends vintage charm with a modern flair — featuring a golden bezel, crisp white dial, and premium brown leather strap. Crafted for the modern gentleman who values *style, class, and timeless design*.\n\n💼 Perfect for business meetings, weddings, formal dinners, or daily elegance. This isn’t just a watch — it’s your personal signature.\n\n🎁 A premium gift choice for birthdays, anniversaries, Father’s Day, or corporate appreciation.`,
   }
 ,
@@ -334,7 +334,7 @@ export default function TrendingProducts() {
     originalPrice: 2699,
     rating: 4.5,
     image: "https://img.drz.lazcdn.com/static/pk/p/a4af4dd5714acbb8bed30c47981b0c9f.jpg_720x720q80.jpg_.webp",
-    hoverImage:"https://img.drz.lazcdn.com/static/pk/p/3a63bee5fa0135ee92c82c30fd95364c.jpg_720x720q80.jpg_.webp",
+    hoverImage:watch40,
     description: ` Apni lifestyle ko upgrade karein T900 Series 8 Pro Ultra Smartwatch ke sath – ek perfect combination hai style, technology aur comfort ka. Yeh watch har us shakhs ke liye hai jo chahta hai smart rehna, connected rehna aur stylish dikhna.
 
 ✅ Key Features:

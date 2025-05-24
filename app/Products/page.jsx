@@ -9,9 +9,54 @@ import bag3 from "../assets/bag3.png";
 import watch002 from "../assets/watch002.png";
 import myshoes01 from "../assets/myshoes01.png"
 import myshoes1 from "../assets/myshoes1.png"
+import watch40 from "../assets/watch40.png"
+
 // Import the product data
 const products = [
  {
+    // product link:  Women Mesh Magnetic Buckle Starry Sky Luxury Fashion Watch with Magnetic Strip for College/Office
+    id: 30231,
+    name: "✨ Royal Heritage™ Gold Dial Watch with Classic Brown Leather Strap – Timeless Luxury for Men",
+    price: 750,
+    originalPrice: 1399,
+    rating: 4.9,
+    image: "https://img.drz.lazcdn.com/static/pk/p/5f7b7773ff5c47853880994b3949c012.jpg_720x720q80.jpg_.webp",
+    hoverImage:
+      // watch0004,
+      // watch40,
+      "https://img.drz.lazcdn.com/static/pk/p/23743f5e5efced6299793247b1708ab2.png_720x720q80.png_.webp",
+    description: ` 👑 *Experience the Charm of Royalty\n\nTurn every moment into a statement of elegance with the *Royal Heritage™ Analog Watch. This masterpiece blends vintage charm with a modern flair — featuring a golden bezel, crisp white dial, and premium brown leather strap. Crafted for the modern gentleman who values *style, class, and timeless design*.\n\n💼 Perfect for business meetings, weddings, formal dinners, or daily elegance. This isn’t just a watch — it’s your personal signature.\n\n🎁 A premium gift choice for birthdays, anniversaries, Father’s Day, or corporate appreciation.`,
+  }
+,
+
+{
+
+    id: 43221,
+    name: "T900 Series 8 T900 Pro Ultra Smart Watch For Men Women 2.09 Full Touch Bluetooth Call Smartwatch Men Women Ultra Watch",
+    price: 1999,
+    originalPrice: 2699,
+    rating: 4.5,
+    image: "https://img.drz.lazcdn.com/static/pk/p/a4af4dd5714acbb8bed30c47981b0c9f.jpg_720x720q80.jpg_.webp",
+    hoverImage:watch40,
+    description: ` Apni lifestyle ko upgrade karein T900 Series 8 Pro Ultra Smartwatch ke sath – ek perfect combination hai style, technology aur comfort ka. Yeh watch har us shakhs ke liye hai jo chahta hai smart rehna, connected rehna aur stylish dikhna.
+
+✅ Key Features:
+🔹 2.09” HD Full Touch Display – Bara aur clear screen easy use aur classy feel ke liye
+
+🔹 Bluetooth Calling Feature – Watch se direct calls receive aur dial karein
+
+🔹 Multiple Sports Modes – Running, walking, cycling aur aur bhi activities track karein
+
+🔹 Health Monitoring – Real-time heart rate, blood pressure aur sleep tracking
+
+🔹 Long Battery Backup – 5-7 din tak chale ek baar charge pe
+
+🔹 Custom Watch Faces – Apne mood ke mutabiq watch ka look change karein
+
+🔹 Water Resistant Design – Daily use aur halki barsaat ke liye perfect
+
+🔹 Smart Notification Alerts – WhatsApp, SMS, Facebook aur calls ki real-time notifications`,
+  },{
     // product link:  Women Mesh Magnetic Buckle Starry Sky Luxury Fashion Watch with Magnetic Strip for College/Office
     id: 30,
     name: "Luxury Starry Sky Women's Watch – Magnetic Elegance for Every Day",
@@ -405,43 +450,43 @@ Style: Glam`,
 const getCategories = () => {
   const categoryMap = products.reduce((acc, product) => {
     // Extract category from product name
-    const words = product.name.split(" ");
+    const words = product?.name?.split(" ");
     let category = "";
 
     if (
-      product.name.toLowerCase().includes("perfume") ||
-      product.name.toLowerCase().includes("attar")
+      product?.name?.toLowerCase()?.includes("perfume") ||
+      product?.name?.toLowerCase()?.includes("attar")
     ) {
       category = "Perfumes";
     } else if (
-      product.name.toLowerCase().includes("bag") ||
-      product.name.toLowerCase().includes("backpack") ||
-      product.name.toLowerCase().includes("handbag")
+      product.name?.toLowerCase()?.includes("bag") ||
+      product.name?.toLowerCase()?.includes("backpack") ||
+      product.name?.toLowerCase()?.includes("handbag")
     ) {
       category = "Bags";
     } else if (
-      product.name.toLowerCase().includes("water bottle") ||
-      product.name.toLowerCase().includes("glass")
+      product.name?.toLowerCase()?.includes("water bottle") ||
+      product.name?.toLowerCase()?.includes("glass")
     ) {
       category = "Bottles";
     } else if (
-      product.name.toLowerCase().includes("watch") ||
-      product.name.toLowerCase().includes("smart watch")
+      product.name?.toLowerCase()?.includes("watch") ||
+      product.name?.toLowerCase()?.includes("smart watch")
     ) {
       category = "Watches";
     } else if (
-      product.name.toLowerCase().includes("wallet") ||
-      product.name.toLowerCase().includes("card holder")
+      product.name?.toLowerCase()?.includes("wallet") ||
+      product.name?.toLowerCase()?.includes("card holder")
     ) {
       category = "Wallets";
     } else if (
-      product.name.toLowerCase().includes("trouser") ||
-      product.name.toLowerCase().includes("nightwear")
+      product.name?.toLowerCase()?.includes("trouser") ||
+      product.name?.toLowerCase()?.includes("nightwear")
     ) {
       category = "Clothing";
     } else if (
-      product.name.toLowerCase().includes("phone") ||
-      product.name.toLowerCase().includes("holder")
+      product.name?.toLowerCase()?.includes("phone") ||
+      product.name?.toLowerCase()?.includes("holder")
     ) {
       category = "Accessories";
     } else {
@@ -493,54 +538,54 @@ export default function ProductsPage() {
       if (selectedCategory === "Perfumes") {
         result = result.filter(
           (product) =>
-            product.name.toLowerCase().includes("perfume") ||
-            product.name.toLowerCase().includes("attar")
+            product?.name?.toLowerCase()?.includes("perfume") ||
+            product?.name?.toLowerCase()?.includes("attar")
         );
       } else if (selectedCategory === "Bags") {
         result = result.filter(
           (product) =>
-            product.name.toLowerCase().includes("bag") ||
-            product.name.toLowerCase().includes("backpack") ||
-            product.name.toLowerCase().includes("handbag")
+            product?.name?.toLowerCase()?.includes("bag") ||
+            product?.name?.toLowerCase()?.includes("backpack") ||
+            product?.name?.toLowerCase()?.includes("handbag")
         );
       } else if (selectedCategory === "Bottles") {
         result = result.filter(
           (product) =>
-            product.name.toLowerCase().includes("water bottle") ||
-            product.name.toLowerCase().includes("glass")
+            product?.name?.toLowerCase()?.includes("water bottle") ||
+            product?.name?.toLowerCase()?.includes("glass")
         );
       } else if (selectedCategory === "Watches") {
         result = result.filter(
           (product) =>
-            product.name.toLowerCase().includes("watch") ||
-            product.name.toLowerCase().includes("smart watch")
+            product?.name?.toLowerCase()?.includes("watch") ||
+            product?.name?.toLowerCase()?.includes("smart watch")
         );
       } else if (selectedCategory === "Wallets") {
         result = result.filter(
           (product) =>
-            product.name.toLowerCase().includes("wallet") ||
-            product.name.toLowerCase().includes("card holder")
+            product?.name?.toLowerCase()?.includes("wallet") ||
+            product?.name?.toLowerCase()?.includes("card holder")
         );
       } else if (selectedCategory === "Clothing") {
         result = result.filter(
           (product) =>
-            product.name.toLowerCase().includes("trouser") ||
-            product.name.toLowerCase().includes("nightwear")
+            product?.name?.toLowerCase()?.includes("trouser") ||
+            product?.name?.toLowerCase()?.includes("nightwear")
         );
       } else if (selectedCategory === "Accessories") {
         result = result.filter(
           (product) =>
-            product.name.toLowerCase().includes("phone") ||
-            product.name.toLowerCase().includes("holder")
+            product?.name?.toLowerCase()?.includes("phone") ||
+            product?.name?.toLowerCase()?.includes("holder")
         );
       }
     }
 
     // Filter by active tab
     if (activeTab === "new") {
-      result = result.filter((product) => product.rating >= 4.9);
+      result = result?.filter((product) => product?.rating >= 4.9);
     } else if (activeTab === "sale") {
-      result = result.filter((product) => product.originalPrice !== null);
+      result = result?.filter((product) => product?.originalPrice !== null);
     }
 
     // Filter by price range
@@ -554,8 +599,8 @@ export default function ProductsPage() {
       const query = searchQuery.toLowerCase();
       result = result.filter(
         (product) =>
-          product.name.toLowerCase().includes(query) ||
-          product.description.toLowerCase().includes(query)
+          product?.name?.toLowerCase()?.includes(query) ||
+          product.description?.toLowerCase()?.includes(query)
       );
     }
 
@@ -1046,7 +1091,7 @@ export default function ProductsPage() {
                   onMouseLeave={() => setHoveredProduct(null)}
                 >
                   {/* Product Image */}
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-82 overflow-hidden">
                     <Link href={`/product/${product.id}`}>
                       <Image
                         src={
@@ -1054,7 +1099,7 @@ export default function ProductsPage() {
                             ? product.hoverImage
                             : product.image
                         }
-                        alt={product.name}
+                        alt={product?.name}
                         fill
                         className="object-cover transition-all duration-700 group-hover:scale-110"
                       />
@@ -1121,7 +1166,7 @@ export default function ProductsPage() {
                   <div className="p-5">
                     <Link href={`/product/${product.id}`} className="block">
                       <h3 className="text-lg font-medium text-gray-900 mb-1 hover:text-rose-600 transition-colors line-clamp-2">
-                        {product.name}
+                        {product?.name}
                       </h3>
                     </Link>
                     <div className="flex items-center mb-2">
@@ -1263,14 +1308,14 @@ export default function ProductsPage() {
                     <div className="relative h-40 overflow-hidden">
                       <Image
                         src={product.image || "/placeholder.svg"}
-                        alt={product.name}
+                        alt={product?.name}
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div className="p-3">
                       <h3 className="text-sm font-medium text-gray-900 truncate">
-                        {product.name}
+                        {product?.name}
                       </h3>
                       <p className="text-sm font-bold text-gray-900">
                         Rs. {product?.price.toFixed(0)}

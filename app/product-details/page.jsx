@@ -175,7 +175,7 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
           <div className="grid grid-cols-1 md:grid-cols-2 md:mb-12 lg:grid-cols-12 gap-8 p-4 md:mt-8 md:p-6">
             {/* Product Images - Left Column */}
             <div className="lg:col-span-5 ">
-              <div className="sticky top-4">
+                <div className="sticky top-4">
                 {/* Main Image with Zoom */}
                 <div
                   ref={imageContainerRef}
@@ -184,32 +184,42 @@ export default function ProductDetail({ product, relatedProductsPromise, reviews
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <Image src={mainImage || "/placeholder.svg"} alt={product?.name} fill className="object-contain border-none" />
-
-                  {discount && (
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-rose-600 text-white text-xs font-bold px-2 py-1 rounded-md">
-                        {discount}% OFF
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Zoom lens overlay */}
-                  {isZoomed && <div className="absolute top-0 left-0 w-full h-full bg-white opacity-0 z-10" />}
-
-                  {/* Zoomed image */}
-                  {isZoomed && (
-                    <div
-                      className="hidden md:block absolute top-0 right-0 transform translate-x-full ml-4 w-[400px] h-[400px] border-2 border-gray-200 rounded-lg overflow-hidden shadow-xl z-50 bg-white"
-                      style={{
-                        backgroundImage: `url(${mainImage})`,
-                        backgroundPosition: `${zoomPosition.x}% ${zoomPosition.y}%`,
-                        backgroundSize: "250%",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                    />
-                  )}
-                </div>
+                
+                
+      <Swiper
+  spaceBetween={10}
+  slidesPerView={"auto"}
+  scrollbar={{ draggable: true }}
+  autoplay={{
+    delay: 3000,
+    disableOnInteraction: false,
+  }}
+  loop={true}
+  modules={[Scrollbar, Autoplay]}
+  className="w-full"
+>
+  {product?.images?.map((image, index) => (
+    <SwiperSlide
+      key={index}
+      className=" !h-[520px] md:!h-[430px] xl:!h-[486px]"
+    >
+      <button
+        onClick={() => setMainImage(image)}
+        className={`relative w-full h-full rounded-md overflow-hidden border-2 transition duration-300 ${
+          mainImage === image ? "border-rose-500" : "border-gray-200"
+        }`}
+      >
+        <Image
+          src={image || "/placeholder.svg"}
+          alt={`${product.name} - Image ${index + 1}`}
+          fill
+          className="object-contain " 
+        />
+      </button>
+    </SwiperSlide>
+  ))}
+</Swiper>
+              </div>
 
 <div className="border-b border-gray-200 pb-4">
   <Swiper

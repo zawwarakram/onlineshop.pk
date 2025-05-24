@@ -23,6 +23,15 @@ import myshoes5 from "../../assets/myshoes8.png"
 import myshoes6 from "../../assets/myshoes9.png"
 import myshoes7 from "../../assets/myshoes10.png"
 import myshoes8 from "../../assets/myshos11.png"
+// import watch0004 from "../../assets/watch0004.png";
+// import watch0005 from "../../assets/watch0005.png";
+// import watch0006 from "../../assets/watch0006.png";
+// import watch0007 from "../../assets/watch0007.png";
+// import watch0008 from "../../assets/watch0008.png";
+// import watch0009 from "../../assets/watch0009.png";
+// import watch00010 from "../../assets/watch00010.png";
+// import watch13 from "../../assets/watch12.png";
+// import watch14 from "../../assets/watch13.png";
 
 // import  { Product, Review } from "@/types"
 
@@ -35,7 +44,176 @@ async function getProductById(id) {
   // Sample product data
   const products = [
     // refrence: Women Mesh Magnetic Buckle Starry Sky Luxury Fashion Watch with Magnetic Strip for College/Office
-   {
+ 
+
+  {
+  "id": 43221,
+  "name": "T900 Series 8 T900 Pro Ultra Smart Watch For Men & Women – 2.09\" Full Touch Bluetooth Call Smartwatch",
+  "price": 1999,
+  "originalPrice": 3400,
+  "rating": 4.8,
+  "image": "https://img.drz.lazcdn.com/static/pk/p/c5844b40bdc3c2e6c02f027d7e30f2f7.jpg_720x720q80.jpg_.webp",
+  "hoverImage": "https://img.drz.lazcdn.com/static/pk/p/d06d2e4d003949f0101b55cd8937aa1c.jpg_720x720q80.jpg_.webp",
+  "description": "⌚ T900 Series 8 Pro Ultra Smart Watch – Style, Fitness & Function, All-in-One!\n\n💥 Smart banain apni lifestyle ko! Yeh stylish aur powerful smartwatch har roz ke liye perfect hai – chahe aap office ja rahe ho, gym mein workout kar rahe ho, ya casually chill kar rahe ho. Iska 2.09\" Full HD display aur Bluetooth calling feature banaye har pal ko smart.\n\n❤ Health tracking, 🔋 long battery, aur 📱 instant notifications – sab kuch ek compact aur modern design mein!",
+  "images": [
+    "https://img.drz.lazcdn.com/static/pk/p/c5844b40bdc3c2e6c02f027d7e30f2f7.jpg_720x720q80.jpg_.webp",
+    "https://img.drz.lazcdn.com/static/pk/p/d06d2e4d003949f0101b55cd8937aa1c.jpg_720x720q80.jpg_.webp",
+    "	https://img.drz.lazcdn.com/static/pk/p/a4af4dd5714acbb8bed30c47981b0c9f.jpg_720x720q80.jpg_.webp",
+    // watch13,
+    // watch14,
+    "	https://img.drz.lazcdn.com/static/pk/p/a4b92370fc01e4d38d52c2d602e8ce84.jpg_720x720q80.jpg_.webp",
+    "https://img.drz.lazcdn.com/static/pk/p/c006b19643c01d7e234b63c219246aa3.jpg_720x720q80.jpg_.webp",
+    "	https://img.drz.lazcdn.com/static/pk/p/73d90803fbac6ec40d0cef3cf29522ea.jpg_720x720q80.jpg_.webp",
+    
+  ],
+  "stock": 40,
+  "sku": "T900-SMARTWATCH-BLACK",
+  "brand": "TechFit",
+  "category": "Electronics",
+  "tags": [
+    "smartwatch",
+    "Bluetooth call watch",
+    "smartwatch for men",
+    "smartwatch for women",
+    "T900 series",
+    "fitness tracker",
+    "touch screen watch"
+  ],
+  "features": [
+    "2.09\" Full HD touch display with ultra-slim bezels",
+    "Bluetooth Calling – Receive & make calls directly from the watch",
+    "Real-time heart rate, BP & SpO2 monitoring",
+    "Multiple fitness & sports modes",
+    "Smart notifications: WhatsApp, Facebook, Instagram & more",
+    "Magnetic charger with long battery life (2-5 days)",
+    "IP67 waterproof & sweatproof design",
+    "Comfortable and skin-friendly silicone strap",
+    "Customizable watch faces for your mood & outfit"
+  ],
+  "specifications": [
+    { "name": "Display Size", "value": "2.09 inches" },
+    { "name": "Touchscreen", "value": "Full Capacitive Touch" },
+    { "name": "Connectivity", "value": "Bluetooth 5.0" },
+    { "name": "Compatible With", "value": "Android & iOS" },
+    { "name": "Water Resistance", "value": "IP67 Splash Proof" },
+    { "name": "Strap Material", "value": "Silicone" },
+    { "name": "Battery Life", "value": "2-5 Days (Typical Use)" },
+    { "name": "Charger Type", "value": "Magnetic USB Charging" },
+    { "name": "Functions", "value": "Calling, Fitness, Notifications, Health Monitoring" },
+    { "name": "Country of Origin", "value": "China" }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "user": "Ayan K.",
+      "avatar": "/placeholder.svg?height=40&width=40",
+      "rating": 5,
+      "date": "3 days ago",
+      "title": "Best in this price!",
+      "comment": "Bluetooth calling and display dono zabardast hain. Is price mein unbeatable value hai!",
+      "helpful": 9,
+      "images": []
+    },
+    {
+      "id": 2,
+      "user": "Maha R.",
+      "avatar": "/placeholder.svg?height=40&width=40",
+      "rating": 4,
+      "date": "1 week ago",
+      "title": "Stylish & functional",
+      "comment": "Daily use ke liye perfect. Notifications aur fitness tracking bilkul theek kaam karte hain.",
+      "helpful": 7,
+      "images": []
+    }
+  ]
+}, {
+      id: 30231,
+      name: "✨ Royal Heritage™ Gold Dial Watch with Classic Brown Leather Strap – Timeless Luxury for Men",
+      price: 750,
+      originalPrice: 1399,
+      rating: 4.9,
+      image:
+        "	https://img.drz.lazcdn.com/static/pk/p/5f7b7773ff5c47853880994b3949c012.jpg_720x720q80.jpg_.webp",
+      hoverImage:
+        "	https://img.drz.lazcdn.com/static/pk/p/23743f5e5efced6299793247b1708ab2.png_720x720q80.png_.webp",
+      description:
+        "👑 *Experience the Charm of Royalty\n\nTurn every moment into a statement of elegance with the *Royal Heritage™ Analog Watch. This masterpiece blends vintage charm with a modern flair — featuring a golden bezel, crisp white dial, and premium brown leather strap. Crafted for the modern gentleman who values *style, class, and timeless design*.\n\n💼 Perfect for business meetings, weddings, formal dinners, or daily elegance. This isn’t just a watch — it’s your personal signature.\n\n🎁 A premium gift choice for birthdays, anniversaries, Father’s Day, or corporate appreciation.",
+      images: [
+        "https://img.drz.lazcdn.com/static/pk/p/5f7b7773ff5c47853880994b3949c012.jpg_720x720q80.jpg_.webp",
+        "	https://img.drz.lazcdn.com/static/pk/p/23743f5e5efced6299793247b1708ab2.png_720x720q80.png_.webp",
+        "https://img.drz.lazcdn.com/static/pk/p/22a71b70bc6a14e98d2b36e92640a986.jpg_720x720q80.jpg_.webp",
+        // "https://img.drz.lazcdn.com/static/pk/p/5f7b7773ff5c47853880994b3949c012.jpg_720x720q80.jpg_.webp",
+        // watch0001,
+        // watch0002,
+        // watch0003,
+        // watch0004,
+        // watch0005,
+        // watch0006,
+        // watch0007,
+        // watch0008,
+        // watch0009,
+        // watch00010,
+      ],
+      stock: 29,
+      sku: "RH-GOLD-BROWN-LEATHER-2025",
+      brand: "Royal Heritage™",
+      category: "Luxury Watches",
+      tags: [
+        "luxury watch",
+        "premium men's watch",
+        "vintage leather watch",
+        "gold analog watch",
+        "classic dress watch",
+        "gift for him",
+      ],
+      features: [
+        "🔥 Bold & Elegant Golden Frame – Commands Attention",
+        "🕰 Precision Quartz Movement – Always On Time",
+        "🧵 Textured Brown Leather Strap – Comfort Meets Class",
+        "🌟 White Dial with Royal Numerals – Simple Yet Sophisticated",
+        "🎯 Lightweight Build – Stylish All-Day Wear",
+        "🎁 Premium Box Packaging – Ready to Impress",
+      ],
+      specifications: [
+        { name: "Brand", value: "Royal Heritage™" },
+        { name: "Strap Material", value: "Genuine Leather Feel (PU)" },
+        { name: "Dial Shape", value: "Round" },
+        { name: "Display Type", value: "Analog" },
+        { name: "Strap Color", value: "Brown" },
+        { name: "Dial Color", value: "White with Gold Trim" },
+        { name: "Water Resistance", value: "Not Waterproof" },
+        { name: "Closure", value: "Classic Buckle" },
+        { name: "Movement", value: "Quartz Japan Movement" },
+        { name: "Country of Origin", value: "Imported" },
+      ],
+      reviews: [
+        {
+          id: 1,
+          user: "Hamza R.",
+          avatar: "/placeholder.svg?height=40&width=40",
+          rating: 5,
+          date: "1 day ago",
+          title: "Boss Look 🔥",
+          comment:
+            "The gold and brown combo looks royal. People asked me where I got it from.",
+          helpful: 13,
+          images: [],
+        },
+        {
+          id: 2,
+          user: "Zeeshan A.",
+          avatar: "/placeholder.svg?height=40&width=40",
+          rating: 5,
+          date: "3 days ago",
+          title: "Feels Expensive!",
+          comment:
+            "Gifted it to my father and he thought it's worth 5K+. Superb quality and classy packaging.",
+          helpful: 10,
+          images: [],
+        },
+      ],
+    },   
+ {
   id: 30,
   name: "Luxury Starry Sky Women's Watch – Magnetic Elegance for Every Day",
   price: 600,

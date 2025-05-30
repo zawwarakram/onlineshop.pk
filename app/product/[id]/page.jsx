@@ -71,7 +71,7 @@ async function getProductById(id) {
     // "	https://img.drz.lazcdn.com/static/pk/p/a4af4dd5714acbb8bed30c47981b0c9f.jpg_720x720q80.jpg_.webp",
     // "	https://img.drz.lazcdn.com/static/pk/p/a4b92370fc01e4d38d52c2d602e8ce84.jpg_720x720q80.jpg_.webp",
     "https://img.drz.lazcdn.com/static/pk/p/c006b19643c01d7e234b63c219246aa3.jpg_720x720q80.jpg_.webp",
-    "	https://img.drz.lazcdn.com/static/pk/p/73d90803fbac6ec40d0cef3cf29522ea.jpg_720x720q80.jpg_.webp",
+    // "	https://img.drz.lazcdn.com/static/pk/p/73d90803fbac6ec40d0cef3cf29522ea.jpg_720x720q80.jpg_.webp",
     watch101,
     watch102,
     watch103,
@@ -154,7 +154,7 @@ async function getProductById(id) {
         "👑 *Experience the Charm of Royalty\n\nTurn every moment into a statement of elegance with the *Royal Heritage™ Analog Watch. This masterpiece blends vintage charm with a modern flair — featuring a golden bezel, crisp white dial, and premium brown leather strap. Crafted for the modern gentleman who values *style, class, and timeless design*.\n\n💼 Perfect for business meetings, weddings, formal dinners, or daily elegance. This isn’t just a watch — it’s your personal signature.\n\n🎁 A premium gift choice for birthdays, anniversaries, Father’s Day, or corporate appreciation.",
       images: [
         "https://img.drz.lazcdn.com/static/pk/p/5f7b7773ff5c47853880994b3949c012.jpg_720x720q80.jpg_.webp",
-        "	https://img.drz.lazcdn.com/static/pk/p/23743f5e5efced6299793247b1708ab2.png_720x720q80.png_.webp",
+        // "	https://i mg.drz.lazcdn.com/static/pk/p/23743f5e5efced6299793247b1708ab2.png_720x720q80.png_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/22a71b70bc6a14e98d2b36e92640a986.jpg_720x720q80.jpg_.webp",
         // "https://img.drz.lazcdn.com/static/pk/p/5f7b7773ff5c47853880994b3949c012.jpg_720x720q80.jpg_.webp",
         watch00011,

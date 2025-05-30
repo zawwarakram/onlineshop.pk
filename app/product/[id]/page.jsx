@@ -25,7 +25,7 @@ import myshoes7 from "../../assets/myshoes10.png"
 import myshoes8 from "../../assets/myshos11.png"
 import watch0004 from "../../assets/c001.jpg";
 import watch0005 from "../../assets/c002.jpg";
-// import watch0006 from "../../assets/c003.jpg";
+import watch0006 from "../../assets/c003.jpg";
 import watch0007 from "../../assets/c004.jpg";
 import watch0008 from "../../assets/c005.jpg";
 import watch0009 from "../../assets/c006.jpg";
@@ -68,8 +68,8 @@ async function getProductById(id) {
   "images": [
     "https://img.drz.lazcdn.com/static/pk/p/c5844b40bdc3c2e6c02f027d7e30f2f7.jpg_720x720q80.jpg_.webp",
     "https://img.drz.lazcdn.com/static/pk/p/d06d2e4d003949f0101b55cd8937aa1c.jpg_720x720q80.jpg_.webp",
-    "	https://img.drz.lazcdn.com/static/pk/p/a4af4dd5714acbb8bed30c47981b0c9f.jpg_720x720q80.jpg_.webp",
-    "	https://img.drz.lazcdn.com/static/pk/p/a4b92370fc01e4d38d52c2d602e8ce84.jpg_720x720q80.jpg_.webp",
+    // "	https://img.drz.lazcdn.com/static/pk/p/a4af4dd5714acbb8bed30c47981b0c9f.jpg_720x720q80.jpg_.webp",
+    // "	https://img.drz.lazcdn.com/static/pk/p/a4b92370fc01e4d38d52c2d602e8ce84.jpg_720x720q80.jpg_.webp",
     "https://img.drz.lazcdn.com/static/pk/p/c006b19643c01d7e234b63c219246aa3.jpg_720x720q80.jpg_.webp",
     "	https://img.drz.lazcdn.com/static/pk/p/73d90803fbac6ec40d0cef3cf29522ea.jpg_720x720q80.jpg_.webp",
     watch101,
@@ -158,8 +158,8 @@ async function getProductById(id) {
         "https://img.drz.lazcdn.com/static/pk/p/22a71b70bc6a14e98d2b36e92640a986.jpg_720x720q80.jpg_.webp",
         // "https://img.drz.lazcdn.com/static/pk/p/5f7b7773ff5c47853880994b3949c012.jpg_720x720q80.jpg_.webp",
         watch00011,
-        watch0005,
-        // watch0006,
+        // watch0005,
+        watch0006,
         watch0007,
         watch00012,
         watch0008,

@@ -23,15 +23,25 @@ import myshoes5 from "../../assets/myshoes8.png"
 import myshoes6 from "../../assets/myshoes9.png"
 import myshoes7 from "../../assets/myshoes10.png"
 import myshoes8 from "../../assets/myshos11.png"
-// import watch0004 from "../../assets/watch0004.png";
-// import watch0005 from "../../assets/watch0005.png";
-// import watch0006 from "../../assets/watch0006.png";
-// import watch0007 from "../../assets/watch0007.png";
-// import watch0008 from "../../assets/watch0008.png";
-// import watch0009 from "../../assets/watch0009.png";
-// import watch00010 from "../../assets/watch00010.png";
-// import watch13 from "../../assets/watch12.png";
-// import watch14 from "../../assets/watch13.png";
+import watch0004 from "../../assets/c001.jpg";
+import watch0005 from "../../assets/c002.jpg";
+import watch0006 from "../../assets/c003.jpg";
+import watch0007 from "../../assets/c004.jpg";
+import watch0008 from "../../assets/c005.jpg";
+import watch0009 from "../../assets/c006.jpg";
+import watch00010 from "../../assets/c007.jpg";
+import watch00011 from "../../assets/c008.jpg";
+import watch00012 from "../../assets/c009.jpg";
+import watch00013 from "../../assets/c0010.jpg";
+import watch00014 from "../../assets/c0011.jpg";
+import watch00015 from "../../assets/c0012.jpg";
+import watch00016 from "../../assets/c0014.jpg";
+import watch101 from "../../assets/c01.jpg";
+import watch102 from "../../assets/c02.jpg";
+import watch103 from "../../assets/c03.jpg";
+import watch104 from "../../assets/c04.jpg";
+import watch105 from "../../assets/c05.jpg";
+import watch106 from "../../assets/c06.jpg";
 
 // import  { Product, Review } from "@/types"
 
@@ -59,11 +69,15 @@ async function getProductById(id) {
     "https://img.drz.lazcdn.com/static/pk/p/c5844b40bdc3c2e6c02f027d7e30f2f7.jpg_720x720q80.jpg_.webp",
     "https://img.drz.lazcdn.com/static/pk/p/d06d2e4d003949f0101b55cd8937aa1c.jpg_720x720q80.jpg_.webp",
     "	https://img.drz.lazcdn.com/static/pk/p/a4af4dd5714acbb8bed30c47981b0c9f.jpg_720x720q80.jpg_.webp",
-    // watch13,
-    // watch14,
     "	https://img.drz.lazcdn.com/static/pk/p/a4b92370fc01e4d38d52c2d602e8ce84.jpg_720x720q80.jpg_.webp",
     "https://img.drz.lazcdn.com/static/pk/p/c006b19643c01d7e234b63c219246aa3.jpg_720x720q80.jpg_.webp",
     "	https://img.drz.lazcdn.com/static/pk/p/73d90803fbac6ec40d0cef3cf29522ea.jpg_720x720q80.jpg_.webp",
+    watch101,
+    watch102,
+    watch103,
+    watch104,
+    watch105,
+    watch106,
     
   ],
   "stock": 40,
@@ -143,16 +157,19 @@ async function getProductById(id) {
         "	https://img.drz.lazcdn.com/static/pk/p/23743f5e5efced6299793247b1708ab2.png_720x720q80.png_.webp",
         "https://img.drz.lazcdn.com/static/pk/p/22a71b70bc6a14e98d2b36e92640a986.jpg_720x720q80.jpg_.webp",
         // "https://img.drz.lazcdn.com/static/pk/p/5f7b7773ff5c47853880994b3949c012.jpg_720x720q80.jpg_.webp",
-        // watch0001,
-        // watch0002,
-        // watch0003,
-        // watch0004,
-        // watch0005,
-        // watch0006,
-        // watch0007,
-        // watch0008,
-        // watch0009,
-        // watch00010,
+        watch00011,
+        watch0005,
+        watch0006,
+        watch0007,
+        watch00012,
+        watch0008,
+        watch0009,
+        watch00016,
+        watch00013,
+        watch00014,
+        watch00010,
+        watch00015,
+        watch0004,
       ],
       stock: 29,
       sku: "RH-GOLD-BROWN-LEATHER-2025",

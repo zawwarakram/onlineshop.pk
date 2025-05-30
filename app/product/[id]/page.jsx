@@ -25,7 +25,7 @@ import myshoes7 from "../../assets/myshoes10.png"
 import myshoes8 from "../../assets/myshos11.png"
 import watch0004 from "../../assets/c001.jpg";
 import watch0005 from "../../assets/c002.jpg";
-import watch0006 from "../../assets/c003.jpg";
+// import watch0006 from "../../assets/c003.jpg";
 import watch0007 from "../../assets/c004.jpg";
 import watch0008 from "../../assets/c005.jpg";
 import watch0009 from "../../assets/c006.jpg";
@@ -159,7 +159,7 @@ async function getProductById(id) {
         // "https://img.drz.lazcdn.com/static/pk/p/5f7b7773ff5c47853880994b3949c012.jpg_720x720q80.jpg_.webp",
         watch00011,
         watch0005,
-        watch0006,
+        // watch0006,
         watch0007,
         watch00012,
         watch0008,
